@@ -7,6 +7,19 @@ html
 {
 	height: 100%;
 }
+.EncartResponsiveTitre
+{
+	height: 110px;
+}
+.EncartResponsiveConnexion
+{
+	width: 100px;
+	background-color: white;
+}
+.BoutonConnecterResponsive
+{
+	margin-bottom: 5px;
+}
 .logoHeader
 {
 	margin-bottom: 15px;
@@ -35,6 +48,17 @@ html
 {
 	margin-left: 45px;
 }
+.listeMenuResponsive
+{
+	margin-left: 0;
+}
+.LogoResponsiveNav
+{
+	width: 150px;
+	/*margin-left: 150px;*/
+	margin-bottom: 5px;
+	margin-right: 90px;
+}
 .Footer
 {
 	margin-top: 30px;
@@ -45,6 +69,11 @@ html
 	margin-top: 10px;
 	text-align: center;
 	text-decoration: none;
+}
+.FooterResponsive
+{
+	margin-top: 30px;
+	height: 80px;
 }
 .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {

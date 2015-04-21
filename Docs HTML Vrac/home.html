@@ -10,12 +10,15 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <div class="row">
-  	<div class="col-sm-4"><img class="logoHeader" width=200px src="logo-banque-du-net.png"></div>
-  	<div class="col-sm-4"><h2 class="titreHeader">La banque à domicile</h2></div>
-  	<div class="col-sm-4"><button type="button" class="btn btn-success BoutonHeader BoutonConnecter">Se connecter</button><button type="button" class="btn btn-warning BoutonHeader BoutonCompte">Créer un compte</button></div>
+  	<div class="col-sm-4 hidden-xs"><img class="logoHeader" width=200px src="logo-banque-du-net.png"></div>
+  	<div class="col-sm-4 visible-xs EncartResponsiveTitre"></div>
+  	<div class="col-sm-4 hidden-xs"><h2 class="titreHeader">La banque à domicile</h2></div>
+  	<div class="col-sm-4 hidden-xs"><button type="button" class="btn btn-success BoutonHeader BoutonConnecter">Se connecter</button><button type="button" class="btn btn-warning BoutonHeader BoutonCompte">Créer un compte</button></div>
+  	<!-- <div class="col-sm-4 visible-xs"><button type="button" class="btn btn-success BoutonHeaderResponsive BoutonConnecterResponsive">Se connecter</button></div>
+  	<div class="col-sm-4 visible-xs"><button type="button" class="btn btn-warning BoutonHeaderResponsive BoutonCompteResponsive">Créer un compte</button></div> -->
 <!--   	<div class="col-sm-2"><button type="button" class="btn btn-success BoutonHeader BoutonCompte">Créer un compte</button></div> -->
   </div>
-  	<nav class="navbar navbar-default navbar-fixed-top">
+  	<nav class="navbar navbar-default navbar-fixed-top hidden-xs">
 		<div class="container-fluid">
   <!--   <div class="navbar-header">
       <a class="navbar-brand" href="#"><img class="logoNavbar" src="logo-banque-du-net.png"></a>
@@ -37,12 +40,45 @@
   		</div>
 	</nav>
 
+	<nav class="navbar navbar-default navbar-fixed-top visible-xs">
+		<div class="container-fluid">
+  <!--   <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img class="logoNavbar" src="logo-banque-du-net.png"></a>
+    </div> -->
+    <div class="row">
+      <ul class="nav navbar-nav listeMenuResponsive">
+        
+        <li>
+        	<img class="LogoResponsiveNav col-sm-2" src="logo-banque-du-net.png">
+        	
+        		<button type="button" class="btn btn-xs btn-success  ">Se connecter</button>
+        	
+  
+  				<button type="button" class="btn btn-warning btn-xs  ">Créer un compte</button>
+  		
+  		</li>
+
+        <li class="active"><a href="#">Accueil</a></li>
+        <li><a href="#1">Présentation de la banque</a></li>
+	        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#2">Offres <span class="caret"></span></a>
+	          <ul class="dropdown-menu">
+	          	<li><a href="#4">PEL</a></li>
+	            <li><a href="#5">Cartes</a></li>
+	            <li><a href="#6">Compte courant</a></li>
+	          </ul>
+	        </li>
+        <li></li>
+      </ul>
+    </div>
+  		</div>
+	</nav>
+
 </head>
 <body>
 
 <div class="container">
   <br>
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <div id="myCarousel" class="carousel slide " data-ride="carousel">
     <!-- Indicators -->
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -83,16 +119,16 @@
 <div class="container">
   <h3>Lorem Ipsum</h3>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-sm-3">
       <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound t</p>
     </div>
-    <div class="col-md-3"> 
+    <div class="col-sm-3"> 
       <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound t</p>
     </div>
-    <div class="col-md-3"> 
+    <div class="col-sm-3"> 
       <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound t</p>
     </div>
-    <div class="col-md-3">
+    <div class="col-sm-3">
       <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound t</p>
     </div>
     <div class="clearfix visible-lg"></div>
@@ -117,13 +153,21 @@
   </div>
 </div> -->
 
-<nav class="navbar navbar-default Footer">
-		<ul class="row ListeFooter">
+<nav class="navbar navbar-default Footer hidden-xs">
+		<ul class="row ListeFooter hidden-xs">
 			<div class="col-md-4"><a href="#34">Mentions Légales</a></div>
 			<div class="col-md-4"><a href="#35">Plan du site</a></div>
 			<div class="col-md-4"><a href="#36">ISEP ©</a></div>
 		</div>
 	</ul>
-
+</nav>
+<nav class="navbar navbar-default FooterResponsive visible-xs">
+	<ul class="row ListeFooter visible-xs">
+			<div class="col-md-4"><a href="#34">Mentions Légales</a></div>
+			<div class="col-md-4"><a href="#35">Plan du site</a></div>
+			<div class="col-md-4"><a href="#36">ISEP ©</a></div>
+		</div>
+	</ul>
+</nav>
 </body>
 </html>
