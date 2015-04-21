@@ -7,9 +7,3 @@ GET     /                           controllers.Application.index()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
-GET     /home						controllers.Application.home()
-
-#GET     /home.html                				    controllers.Assets.at(path="/public/html", file="home.html")
-#GET     /public/javascripts/jquery.min.js	        controllers.Assets.at(path="/public/javascripts", file="jquery.min.js")
-#GET     /public/javascripts/bootstrap.min.js     	controllers.Assets.at(path="/public/javascripts", file="bootstrap.min.js")
-#GET     /public/stylesheets/bootstrap.css           controllers.Assets.at(path="/public/stylesheets", file="bootstrap.css")

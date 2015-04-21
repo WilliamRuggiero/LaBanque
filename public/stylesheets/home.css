@@ -1,0 +1,78 @@
+body
+{
+	margin: 0;
+	padding-top: 70px;
+}
+html
+{
+	height: 100%;
+}
+.EncartResponsiveTitre
+{
+	height: 110px;
+}
+.EncartResponsiveConnexion
+{
+	width: 100px;
+	background-color: white;
+}
+.logoHeader
+{
+	margin-bottom: 15px;
+	margin-left: 60px;
+}
+.titreHeader
+{
+	margin-top: 30px;
+	/*margin-bottom: 15px;
+	margin-left: 150px;*/
+	text-align: center;
+	/*margin-left: 50px;*/
+}
+.BoutonHeader
+{
+	margin-left: 30px;}
+.BoutonConnecter
+{
+	margin-top: 30px;
+}
+.BoutonCompte
+{
+	margin-top: 30px;
+}
+.listeMenu
+{
+	margin-left: 45px;
+}
+.listeMenuResponsive
+{
+	margin-left: 0;
+}
+.LogoResponsiveNav
+{
+	width: 130px;
+	margin-left: 15px;
+	margin-bottom: 5px;
+	margin-right: 80px;
+}
+.Footer
+{
+	margin-top: 30px;
+	height: 10px;
+}
+.ListeFooter
+{
+	margin-top: 10px;
+	text-align: center;
+	text-decoration: none;
+}
+.FooterResponsive
+{
+	margin-top: 30px;
+	height: 80px;
+}
+.carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 50%;
+      margin: auto;
+  }
