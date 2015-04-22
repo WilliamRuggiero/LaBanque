@@ -12,16 +12,16 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
   <div class="row">
-  	<div class="col-sm-4 hidden-xs"><img class="logoHeader" width=200px src="@routes.Assets.at("images/logo-banque-du-net.png")"></div>
-  	<div class="col-sm-4 visible-xs EncartResponsiveTitre"></div>
-  	<div class="col-sm-4 hidden-xs"><h2 class="titreHeader">La banque à domicile</h2></div>
-  	<div class="col-sm-4 hidden-xs"><button type="button" class="btn btn-success BoutonHeader BoutonConnecter">Se connecter</button><button type="button" class="btn btn-warning BoutonHeader BoutonCompte">Créer un compte</button></div>
-  	<!-- <div class="col-sm-4 visible-xs"><button type="button" class="btn btn-success BoutonHeaderResponsive BoutonConnecterResponsive">Se connecter</button></div>
-  	<div class="col-sm-4 visible-xs"><button type="button" class="btn btn-warning BoutonHeaderResponsive BoutonCompteResponsive">Créer un compte</button></div> -->
-<!--   	<div class="col-sm-2"><button type="button" class="btn btn-success BoutonHeader BoutonCompte">Créer un compte</button></div> -->
+    <div class="col-sm-4 hidden-xs"><img class="logoHeader" width=200px src="@routes.Assets.at("images/logo-banque-du-net.png")"></div>
+    <div class="col-sm-4 visible-xs EncartResponsiveTitre"></div>
+    <div class="col-sm-4 hidden-xs"><h2 class="titreHeader">La banque à domicile</h2></div>
+    <div class="col-sm-4 hidden-xs"><button type="button" class="btn btn-success BoutonHeader BoutonConnecter">Se connecter</button><button type="button" class="btn btn-warning BoutonHeader BoutonCompte">Créer un compte</button></div>
+    <!-- <div class="col-sm-4 visible-xs"><button type="button" class="btn btn-success BoutonHeaderResponsive BoutonConnecterResponsive">Se connecter</button></div>
+    <div class="col-sm-4 visible-xs"><button type="button" class="btn btn-warning BoutonHeaderResponsive BoutonCompteResponsive">Créer un compte</button></div> -->
+<!--    <div class="col-sm-2"><button type="button" class="btn btn-success BoutonHeader BoutonCompte">Créer un compte</button></div> -->
   </div>
-  	<nav class="navbar navbar-default navbar-fixed-top hidden-xs">
-		<div class="container-fluid">
+    <nav class="navbar navbar-default navbar-fixed-top hidden-xs">
+    <div class="container-fluid">
   <!--   <div class="navbar-header">
       <a class="navbar-brand" href="#"><img class="logoNavbar" src="logo-banque-du-net.png"></a>
     </div> -->
@@ -29,21 +29,22 @@
       <ul class="nav navbar-nav listeMenu">
         <li class="active"><a href="#">Accueil</a></li>
         <li><a href="#1">Présentation de la banque</a></li>
-	        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#2">Offres <span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	          	<li><a href="#4">PEL</a></li>
-	            <li><a href="#5">Cartes</a></li>
-	            <li><a href="#6">Compte courant</a></li>
-	          </ul>
-	        </li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#2">Offres <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#3">Compte courant</a></li>
+              <li><a href="#4">Cartes</a></li>
+              <li><a href="#5">Livret A</a></li>
+              <li><a href="#6">PEL</a></li>
+            </ul>
+          </li>
         <li></li>
       </ul>
     </div>
-  		</div>
-	</nav>
+      </div>
+  </nav>
 
-	<nav class="navbar navbar-default navbar-fixed-top visible-xs">
-		<div class="container-fluid">
+  <nav class="navbar navbar-default navbar-fixed-top visible-xs">
+    <div class="container-fluid">
   <!--   <div class="navbar-header">
       <a class="navbar-brand" href="#"><img class="logoNavbar" src="logo-banque-du-net.png"></a>
     </div> -->
@@ -51,25 +52,26 @@
       <ul class="nav navbar-nav listeMenuResponsive">
         
         <li>
-       		<img class="LogoResponsiveNav" src="@routes.Assets.at("images/logo-banque-du-net.png")">	
-       		<button type="button" class="btn btn-xs btn-success">Se connecter</button>
-			<button type="button" class="btn btn-warning btn-xs">Créer un compte</button>
-  		</li>
+          <img class="LogoResponsiveNav" src="@routes.Assets.at("images/logo-banque-du-net.png")">  
+          <button type="button" class="btn btn-xs btn-success">Se connecter</button>
+         <button type="button" class="btn btn-warning btn-xs">Créer un compte</button>
+        </li>
 
         <li class="active"><a href="#">Accueil</a></li>
         <li><a href="#1">Présentation de la banque</a></li>
-	        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#2">Offres <span class="caret"></span></a>
-	          <ul class="dropdown-menu">
-	          	<li><a href="#4">PEL</a></li>
-	            <li><a href="#5">Cartes</a></li>
-	            <li><a href="#6">Compte courant</a></li>
-	          </ul>
-	        </li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#2">Offres <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#3">Compte courant</a></li>
+              <li><a href="#4">Cartes</a></li>
+              <li><a href="#5">Livret A</a></li>
+              <li><a href="#6">PEL</a></li>
+            </ul>
+          </li>
         <li></li>
       </ul>
     </div>
-  		</div>
-	</nav>
+      </div>
+  </nav>
 
 </head>
 <body>
@@ -82,6 +84,7 @@
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
       <li data-target="#myCarousel" data-slide-to="1"></li>
       <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -96,6 +99,10 @@
     
       <div class="item">
         <img src="@routes.Assets.at("images/3.jpg")" alt="Flower" width="360" height="245">
+      </div>
+
+      <div class="item">
+        <img src="@routes.Assets.at("images/4.jpg")" alt="Flower" width="360" height="245">
       </div>
     </div>
 
@@ -152,20 +159,20 @@
 </div> -->
 
 <nav class="navbar navbar-default Footer hidden-xs">
-		<ul class="row ListeFooter hidden-xs">
-			<div class="col-md-4"><a href="#34">Mentions Légales</a></div>
-			<div class="col-md-4"><a href="#35">Plan du site</a></div>
-			<div class="col-md-4"><a href="#36">ISEP ©</a></div>
-		</div>
-	</ul>
+    <ul class="row ListeFooter hidden-xs">
+      <div class="col-md-4"><a href="#34">Mentions Légales</a></div>
+      <div class="col-md-4"><a href="#35">Plan du site</a></div>
+      <div class="col-md-4"><a href="#36">ISEP ©</a></div>
+    </div>
+  </ul>
 </nav>
 <nav class="navbar navbar-default FooterResponsive visible-xs">
-	<ul class="row ListeFooter visible-xs">
-			<div class="col-md-4"><a href="#34">Mentions Légales</a></div>
-			<div class="col-md-4"><a href="#35">Plan du site</a></div>
-			<div class="col-md-4"><a href="#36">ISEP ©</a></div>
-		</div>
-	</ul>
+  <ul class="row ListeFooter visible-xs">
+      <div class="col-md-4"><a href="#34">Mentions Légales</a></div>
+      <div class="col-md-4"><a href="#35">Plan du site</a></div>
+      <div class="col-md-4"><a href="#36">ISEP ©</a></div>
+    </div>
+  </ul>
 </nav>
 </body>
 </html>
