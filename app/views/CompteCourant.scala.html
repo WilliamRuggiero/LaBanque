@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Accueil - La banque Nationale</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/home.css")">
+  <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/Offres.css")">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  <div class="row">
+    <div class="col-sm-4 hidden-xs"><img class="logoHeader" width=200px src="@routes.Assets.at("images/logo-banque-du-net.png")"></div>
+    <div class="col-sm-4 visible-xs EncartResponsiveTitre"></div>
+    <div class="col-sm-4 hidden-xs"><h2 class="titreHeader">La banque à domicile</h2></div>
+    <div class="col-sm-4 hidden-xs"><button type="button" class="btn btn-success BoutonHeader BoutonConnecter">Se connecter</button><button type="button" class="btn btn-warning BoutonHeader BoutonCompte">Créer un compte</button></div>
+    <!-- <div class="col-sm-4 visible-xs"><button type="button" class="btn btn-success BoutonHeaderResponsive BoutonConnecterResponsive">Se connecter</button></div>
+    <div class="col-sm-4 visible-xs"><button type="button" class="btn btn-warning BoutonHeaderResponsive BoutonCompteResponsive">Créer un compte</button></div> -->
+<!--    <div class="col-sm-2"><button type="button" class="btn btn-success BoutonHeader BoutonCompte">Créer un compte</button></div> -->
+  </div>
+    <nav class="navbar navbar-default navbar-fixed-top hidden-xs">
+    <div class="container-fluid">
+  <!--   <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img class="logoNavbar" src="logo-banque-du-net.png"></a>
+    </div> -->
+    <div>
+      <ul class="nav navbar-nav listeMenu">
+        <li class="active"><a href="@routes.Application.index()">Accueil</a></li>
+        <li><a href="#1">Présentation de la banque</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Offres <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="@routes.Offres.CompteCourant()">Compte courant</a></li>
+              <li><a href="@routes.Offres.Cartes()">Cartes</a></li>
+              <li><a href="@routes.Offres.LivretA()">Livret A</a></li>
+              <li><a href="@routes.Offres.PEL()">PEL</a></li>
+            </ul>
+          </li>
+        <li></li>
+      </ul>
+    </div>
+      </div>
+  </nav>
+
+  <nav class="navbar navbar-default navbar-fixed-top visible-xs">
+    <div class="container-fluid">
+  <!--   <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img class="logoNavbar" src="logo-banque-du-net.png"></a>
+    </div> -->
+    <div class="row">
+      <ul class="nav navbar-nav listeMenuResponsive">
+        
+        <li>
+          <img class="LogoResponsiveNav" src="@routes.Assets.at("images/logo-banque-du-net.png")">  
+          <button type="button" class="btn btn-xs btn-success">Se connecter</button>
+         <button type="button" class="btn btn-warning btn-xs">Créer un compte</button>
+        </li>
+
+        <li class="active"><a href="#">Accueil</a></li>
+        <li><a href="#1">Présentation de la banque</a></li>
+          <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#2">Offres <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="@routes.Offres.CompteCourant()">Compte courant</a></li>
+              <li><a href="@routes.Offres.Cartes()">Cartes</a></li>
+              <li><a href="@routes.Offres.LivretA()">Livret A</a></li>
+              <li><a href="@routes.Offres.PEL()">PEL</a></li>
+            </ul>
+          </li>
+        <li></li>
+      </ul>
+    </div>
+      </div>
+  </nav>
+
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3">
+      <p></p>
+    </div>
+    <div class="col-sm-6 TitreOffres">
+      <p><h4>Le compte courant</h4></p>
+    </div>
+    <div class="col-sm-3">
+      <p></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!--Footer-->
+<nav class="navbar navbar-default Footer hidden-xs">
+    <ul class="row ListeFooter hidden-xs">
+      <div class="col-md-4"><a href="#34">Mentions Légales</a></div>
+      <div class="col-md-4"><a href="#35">Plan du site</a></div>
+      <div class="col-md-4"><a href="#36">ISEP ©</a></div>
+    </div>
+  </ul>
+</nav>
+<nav class="navbar navbar-default FooterResponsive visible-xs">
+  <ul class="row ListeFooter visible-xs">
+      <div class="col-md-4"><a href="#34">Mentions Légales</a></div>
+      <div class="col-md-4"><a href="#35">Plan du site</a></div>
+      <div class="col-md-4"><a href="#36">ISEP ©</a></div>
+    </div>
+  </ul>
+</nav>
+</body>
+</html>
