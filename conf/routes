@@ -8,8 +8,8 @@ GET     /CompteCourant   			controllers.Offres.CompteCourant()
 GET     /LivretA		   			controllers.Offres.LivretA()
 GET     /Cartes			   			controllers.Offres.Cartes()
 GET     /PEL			   			controllers.Offres.PEL()
-GET     /userList			   			controllers.Application.userList()
-
+GET     /userList			   		controllers.Application.userList()
+GET		/PresentationBanque			controllers.Presentation.PresentationBanque()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

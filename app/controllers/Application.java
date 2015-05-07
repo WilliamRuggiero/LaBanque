@@ -13,7 +13,7 @@ public class Application extends Controller {
     public static Result index() {
          return ok(index.render());   
     }
-    
+   
     public static Result userList() {
     	List<User> userList = User.find.all(); 
     	String str = "";
