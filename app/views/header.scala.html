@@ -1,14 +1,5 @@
-<title>Accueil - La banque Nationale</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/home.css")">
-  <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/Offres.css")">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-
-  <div class="row">
-    <div class="col-sm-4 hidden-xs"><img class="logoHeader" width=200px src="@routes.Assets.at("images/logo-banque-du-net.png")"></div>
+   <div class="row">
+    <div class="col-sm-4 hidden-xs"><a href="@routes.Application.index()"><img class="logoHeader" width=200px src="@routes.Assets.at("images/logo-banque-du-net.png")"></div></a>
     <div class="col-sm-4 visible-xs EncartResponsiveTitre"></div>
     <div class="col-sm-4 hidden-xs"><h2 class="titreHeader">La banque à domicile</h2></div>
     <div class="col-sm-4 hidden-xs"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success BoutonHeader BoutonConnecter">Se connecter</button><button type="button" class="btn btn-warning BoutonHeader BoutonCompte">Créer un compte</button></div>
@@ -72,7 +63,7 @@ $(document).ready(function(){
     </div> -->
     <div>
       <ul class="nav navbar-nav listeMenu">
-        <li class="active"><a href="#">Accueil</a></li>
+        <li class="active"><a href="@routes.Application.index()">Accueil</a></li>
         <li><a href="#1">Présentation de la banque</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Offres <span class="caret"></span></a>
             <ul class="dropdown-menu">
@@ -102,7 +93,7 @@ $(document).ready(function(){
           <button type="button" class="btn btn-warning btn-xs">Créer un compte</button>
         </li>
 
-        <li class="active"><a href="#">Accueil</a></li>
+        <li class="active"><a href="@routes.Application.index()">Accueil</a></li>
         <li><a href="#1">Présentation de la banque</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#2">Offres <span class="caret"></span></a>
             <ul class="dropdown-menu">
