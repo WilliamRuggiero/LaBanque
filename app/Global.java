@@ -12,7 +12,7 @@ public class Global extends GlobalSettings {
     
     System.out.print("toto");
     
-    User u = new User("william");
+    User u = new User("william","ruggiero");
     u.save();
 }
 

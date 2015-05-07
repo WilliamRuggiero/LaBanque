@@ -14,9 +14,11 @@ public class User extends Model {
 	public Long userId;
 	
 	public String name;
+	public String firstName;
 	
-	public User(String name) {
+	public User(String name, String firstName) {
 		this.name = name;
+		this.firstName=firstName;
 	}
 
 }
