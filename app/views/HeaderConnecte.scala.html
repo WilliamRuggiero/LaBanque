@@ -31,7 +31,7 @@ $(document).ready(function(){
     <div>
       <ul class="nav navbar-nav listeMenu">
         <li class="active"><a href="@routes.Application.index()">Accueil</a></li>
-        <li><a href="#1">Présentation de la banque</a></li>
+        <li><a href="@routes.Presentation.PresentationBanque()">Présentation de la banque</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Offres <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="@routes.Offres.CompteCourant()">Compte courant</a></li>
@@ -61,7 +61,7 @@ $(document).ready(function(){
         </li>
 
         <li class="active"><a href="@routes.Application.index()">Accueil</a></li>
-        <li><a href="#1">Présentation de la banque</a></li>
+        <li><a href="@routes.Presentation.PresentationBanque()">Présentation de la banque</a></li>
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#2">Offres <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="@routes.Offres.CompteCourant()">Compte courant</a></li>
@@ -89,7 +89,7 @@ $(document).ready(function(){
         </div>
         <div class="modal-body" style="padding:30px 40px;">
          
-              <h5> Êtes-vous certain de vouloir vous déconnecter ? </h5> <a href="@routes.Offres.CompteCourant()"><button type="button" class="btn btn-sm btn-danger">Se déconnecter</button></a>
+              <h5> Êtes-vous certain de vouloir vous déconnecter ? </h5> <a href="@routes.Application.index()"><button type="button" class="btn btn-sm btn-danger">Se déconnecter</button></a>
           
         <!-- <div class="modal-footer">
           <button type="submit" class="btn btn-danger btn-default pull-left" data-dismiss="modal" style="margin-left: 34px;"><span class="glyphicon glyphicon-remove"></span> Annuler</button>

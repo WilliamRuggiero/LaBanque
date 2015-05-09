@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profil - La banque Nationale</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet"
+		href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/home.css")">
+	<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/Profil.css")">
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script
+		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+	@HeaderConnecte()
+	<div class="container">
+		<div class="row">
+			<p></p>
+		</div>
+		<div class="row">
+			<div class="col-sm-2"><img src="@routes.Assets.at("images/avatarHomme.png")"></div>
+			<div class="col-sm-5">
+				<table>
+					<tr>
+						<th>Historique des actions</th>
+						<th>Etats</th>
+					</tr>
+					<tr>
+						<td>Exemples Demande de LivretA</td>
+						<td>Exemples En attente
+					</tr>
+					<tr>
+						<td>Exemples Demande de PEL</td>
+						<td>Exemples Reffusée
+					</tr>
+					<tr>
+						<td>Exemples Demande de LivretA</td>
+						<td>Exemples En attente
+					</tr>
+				</table>
+			</div>
+			<div class="col-sm-5">
+				<table>
+					<tr>
+						<th>Patrimoine</th>
+						<th>Type</th>
+					</tr>
+					<tr>
+						<td>PEL</td>
+						<td>Exemples En attente</td>
+					</tr>
+					<tr>
+						<td>LivretA</td>
+						<td>Exemples En attente</td>
+					</tr>
+					<tr>
+						<td>Propriétés privés</td>
+						<td>Exemples En attente</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class = "row">
+			<div class ="col-sm-5">
+				<p>Nom : </p>
+				<p>Prenom : </p>
+				<p>RIB : </p>
+			</div>
+		</div>
+	</div>
+	@footer()
+</body>
+</html>
