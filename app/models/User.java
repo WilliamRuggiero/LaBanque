@@ -19,14 +19,16 @@ public class User extends Model {
 	public String password1;
 	public String password2;
 	public String Telephone;
+	public String RIB;
 	
-	public User(String lastName, String firstName, String email, String password1, String password2, String Telephone) {
+	public User(String lastName, String firstName, String email, String password1, String password2, String Telephone, String RIB) {
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.email  = email;
 		this.password1 = password1;
 		this.password2 = password2;
 		this.Telephone = Telephone;
+		this.RIB = RIB;
 	}
 
 }
