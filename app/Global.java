@@ -11,8 +11,8 @@ public class Global extends GlobalSettings {
     Logger.info("Application has started");
     
     System.out.print("toto");
-    
-    User u = new User("william","ruggiero");
+  
+    User u = new User("william","ruggiero", "william.ruggiero@gmail.com", "1234");
     u.save();
 }
 

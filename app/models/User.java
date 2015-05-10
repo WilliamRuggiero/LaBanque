@@ -13,12 +13,16 @@ public class User extends Model {
 	@Id
 	public Long userId;
 	
-	public String name;
+	public String lastName;
 	public String firstName;
+	public String email;
+	public String password;
 	
-	public User(String name, String firstName) {
-		this.name = name;
-		this.firstName=firstName;
+	public User(String lastName, String firstName, String email, String password) {
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.email  = email;
+		this.password = password;
 	}
 
 }

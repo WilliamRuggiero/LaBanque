@@ -17,9 +17,9 @@ public class Application extends Controller {
     public static Result userList() {
     	List<User> userList = User.find.all(); 
     	String str = "";
-    	
+    	    
     	for(User u : userList) {
-    		str += u.name+ u.firstName;
+    		str += u.lastName+" "+u.firstName+" "+u.email+" "+u.password;
     		str += "\n";
     	}
     	
