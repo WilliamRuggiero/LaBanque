@@ -2,7 +2,7 @@
     <div class="col-sm-4 hidden-xs"><a href="@routes.Application.index()"><img class="logoHeader" width=200px src="@routes.Assets.at("images/logo-banque-du-net.png")"></div></a>
     <div class="col-sm-4 visible-xs EncartResponsiveTitre"></div>
     <div class="col-sm-4 hidden-xs"><h2 class="titreHeader">La banque à domicile</h2></div>
-    <div class="col-sm-4 hidden-xs"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success BoutonHeader BoutonConnecter">Se connecter</button><a href="@routes.Inscription.Inscri()"><button type="button" class="btn btn-warning BoutonHeader BoutonCompte">Créer un compte</button></a></div>
+    <div class="col-sm-4 hidden-xs"><button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success BoutonHeader BoutonConnecter">Se connecter</button><button type="button" class="btn btn-warning BoutonHeader BoutonCompte">Créer un compte</button></div>
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
@@ -65,7 +65,6 @@ $(document).ready(function(){
       <ul class="nav navbar-nav listeMenu">
         <li class="active"><a href="@routes.Application.index()">Accueil</a></li>
         <li><a href="@routes.Presentation.PresentationBanque()">Présentation de la banque</a></li>
-        
           <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Offres <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="@routes.Offres.CompteCourant()">Compte courant</a></li>
@@ -91,7 +90,7 @@ $(document).ready(function(){
         <li>
           <img class="LogoResponsiveNav" src="@routes.Assets.at("images/logo-banque-du-net.png")">  
           <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-xs btn-success">Se connecter</button>
-          <a href="@routes.Inscription.Inscri()"><button type="button" class="btn btn-warning btn-xs">Créer un compte</button></a>
+          <button type="button" class="btn btn-warning btn-xs">Créer un compte</button>
         </li>
 
         <li class="active"><a href="@routes.Application.index()">Accueil</a></li>

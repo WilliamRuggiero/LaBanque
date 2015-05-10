@@ -11,7 +11,6 @@ GET     /PEL			   			controllers.Offres.PEL()
 GET     /userList			   		controllers.Application.userList()
 GET		/PresentationBanque			controllers.Presentation.PresentationBanque()
 GET 	/Profil						controllers.profilUser.ProfilUse()
-GET 	/Inscription			    controllers.Inscription.Inscri()
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
