@@ -20,8 +20,9 @@ public class User extends Model {
 	public String password2;
 	public String Telephone;
 	public String RIB;
+	public String sex;
 	
-	public User(String lastName, String firstName, String email, String password1, String password2, String Telephone, String RIB) {
+	public User(String lastName, String firstName, String email, String password1, String password2, String Telephone, String RIB, String sex) {
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.email  = email;
@@ -29,6 +30,7 @@ public class User extends Model {
 		this.password2 = password2;
 		this.Telephone = Telephone;
 		this.RIB = RIB;
+		this.sex = sex;
 	}
 
 }

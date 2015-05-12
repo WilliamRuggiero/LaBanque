@@ -19,7 +19,7 @@ public class Application extends Controller {
     	String str = "";
     	    
     	for(User u : userList) {
-    		str += u.lastName+" "+u.firstName+" "+u.email+" "+u.password1+" "+u.password2+" "+u.Telephone+" "+u.RIB;
+    		str += u.lastName+" "+u.firstName+" "+u.email+" "+u.password1+" "+u.password2+" "+u.Telephone+" "+u.RIB+" "+u.sex;
     		str += "\n";
     	}
     	
