@@ -7,11 +7,12 @@ import play.mvc.Controller;
 import play.mvc.Result;
 
 import views.html.*;
+import views.html.page.userOverview.*;
 
 public class profilUser extends Controller {
 
-    public static Result ProfilUse() {
-        return ok(Profil.render());   
+    public static Result profilUse() {
+        return ok(userOverview.render());   
    }
 }
 

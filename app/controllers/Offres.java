@@ -6,6 +6,8 @@ import play.mvc.*;
 
 import views.html.*;
 
+import views.html.page.offres.*;
+
 	public class Offres extends Controller {
 
 	public static Result CompteCourant() {

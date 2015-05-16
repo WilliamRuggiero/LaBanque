@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<title>Livret A - La banque Nationale</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/home.css")">
-<link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/Offres.css")">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-</head>
 
-<body>
-	@header()
+
+@main("cartes"){
 	<div class="row">
 		<p></p>
 	</div>
@@ -43,7 +28,7 @@
 						<div class="row">
 							<div class="col-sm-1"></div>
 							<div class="col-sm-7">
-								<div class="LivretA">Compte courant</div>
+								<div class="LivretA">Cartes</div>
 							</div>
 							<div class="col-sm-4"></div>
 						</div>
@@ -109,7 +94,4 @@
 	</div>
 
 
-	<!--Footer-->
-	@footer()
-</body>
-</html>
+	}
