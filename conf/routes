@@ -13,6 +13,7 @@ GET		/bankOverview 				controllers.Presentation.presentationBanque()
 GET 	/userOverview				controllers.profilUser.profilUse()
 GET     /userRegistration			controllers.Inscription.Inscri()
 GET     /userForget					controllers.Inscription.rappelMotDePasse()
+GET		/Profil						controllers.profilUser.profilUse()
 
 # BackEnd
 #GET 	/login						controllers.Application.login()
