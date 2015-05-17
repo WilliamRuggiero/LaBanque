@@ -18,7 +18,7 @@ public class Application extends Controller {
     	imageList.add("3");
     	imageList.add("4");
     	
-         return ok(index.render(imageList,"1"));   
+        return ok(index.render(imageList,"1"));   
     }
    
     public static Result userList() {
