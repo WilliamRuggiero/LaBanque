@@ -1,6 +1,32 @@
-@import page.inscription._
-@import form._
+@(registrationForm: Form[formData.userRegister.NewUserData])
 
-@main("userRegistration"){
-		@inscri();
+@import views.html.main
+@import play.api.mvc.Result
+@import helper.form
+@import views.html.formTool._
+@import page.backEnd._
+
+@main("Créez votre compte"){
+	<div class="container">
+	@form(controllers.routes.BackEnd.userPostPost(), 'class -> "form-horizontal") {
+	<fieldset>
+	<div class="col-sm-12 visible-xs" style="height:60px;">
+	</div>
+	@inputTextLine(registrationForm("firstName"), label="Prénom", placeholder="Entrez votre prénom")
+	@inputTextLine(registrationForm("lastName"), label="Nom", placeholder="Entrez votre Nom")
+	@inputTextLine(registrationForm("email"), label="Mail", placeholder="Entrez votre email")
+	@inputTextLine(registrationForm("telephone"), label="Telephone", placeholder="Entrez votre Téléphone")
+	@inputPassword(registrationForm("password"), label="Mot de Passe", placeholder="Entrez votre mot de passe")
+	@inputTextLine(registrationForm("sex"), label="Sexe", placeholder="Entrez votre sex")
+
+	</fieldset>
+	<div class="col-sm-7"></div>
+	<div class="col-sm-1">
+	<button id="submit" type="submit" value="Submit" class="btn btn-success">S'inscrire
+	</button>
+	</div>
+}
+
+	</div>
+
 }
