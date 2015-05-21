@@ -1,0 +1,39 @@
+@(loginForm: Form[formData.userLogin.UserLogin])
+
+@import views.html.main
+@import play.api.mvc.Result
+@import helper.form
+@import views.html.formTool._
+
+@main("Page de Connexion"){
+
+<div class="col-sm-12 visible-xs" style="width:20px; height:20px;">
+
+</div>
+<fieldset>
+<div class="col-sm-3">
+</div>
+<div class="col-sm-6">
+@inputEmail(loginForm("email"), label="email", placeholder="Entrer mail")
+</div>
+<div class="col-sm-3">
+</div>
+<div class="col-sm-3">
+</div>
+<div class="col-sm-6">
+@inputPassword(loginForm("password"), label="password", placeholder="Entrer mot de passe")
+</div>
+<div class="col-sm-3">
+</div>
+</fieldset>
+
+<div class="col-sm-7"></div>
+	<div class="col-sm-1">
+	<div class="col-sm-1 visible-xs">
+	<button id="submit" type="submit" value="Submit" class="btn btn-success">Se connecter
+	</button>
+	</div>
+	</div>
+
+
+}

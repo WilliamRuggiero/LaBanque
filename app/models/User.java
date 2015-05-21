@@ -3,6 +3,7 @@ package models;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+
 import play.db.ebean.Model;
 
 @Entity
@@ -16,20 +17,19 @@ public class User extends Model {
 	public String lastName;
 	public String firstName;
 	public String email;
-	public String password1;
-	public String password2;
-	public String Telephone;
-	public String RIB;
+	public String password;
+	public String telephone;
+	public String releveIdentiteBancaire;
 	public String sex;
 	
-	public User(String lastName, String firstName, String email, String password1, String password2, String Telephone, String RIB, String sex) {
+	public User(Long userId, String lastName, String firstName, String email, String password, String telephone, String releveIdentiteBancaire, String sex) {
+		this.userId = userId;
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.email  = email;
-		this.password1 = password1;
-		this.password2 = password2;
-		this.Telephone = Telephone;
-		this.RIB = RIB;
+		this.password = password;
+		this.telephone = telephone;
+		this.releveIdentiteBancaire = releveIdentiteBancaire;
 		this.sex = sex;
 	}
 

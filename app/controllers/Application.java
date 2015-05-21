@@ -1,8 +1,10 @@
 package controllers;
 
 import java.util.ArrayList;
+import views.html.page.login.*;
 import java.util.List;
 
+import formData.userLogin.UserLogin;
 import models.User;
 import play.data.Form;
 import play.mvc.Controller;
@@ -26,11 +28,19 @@ public class Application extends Controller {
     	String str = "";
     	    
     	for(User u : userList) {
-    		str += u.lastName+" "+u.firstName+" "+u.email+" "+u.password1+" "+u.password2+" "+u.Telephone+" "+u.RIB+" "+u.sex;
+    		str += u.lastName+" "+u.firstName+" "+u.email+" "+u.password+" "+u.telephone+" "+u.releveIdentiteBancaire+" "+u.sex;
     		str += "\n";
     	}
          return ok(str);
     }
+    
+    public static Result loginUser(){
+		UserLogin formData = new UserLogin();
+
+		Form<UserLogin> form = Form.form(UserLogin.class).fill(formData);
+	return ok(userLogin.render(form));
+	}
+    
     
    
  }
