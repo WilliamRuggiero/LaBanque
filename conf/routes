@@ -17,6 +17,7 @@ GET		/Profil						controllers.profilUser.profilUse()
 GET 	/admin/userRegister			controllers.BackEnd.userPost()
 POST 	/demoPostPost				controllers.BackEnd.userPostPost()
 GET 	/login						controllers.LoginUser.loginUser()
+POST	/newUser					controllers.Inscription.addUser()
 
 
 # BackEnd

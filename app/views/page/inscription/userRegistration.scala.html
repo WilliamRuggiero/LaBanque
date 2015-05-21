@@ -4,11 +4,11 @@
 @import play.api.mvc.Result
 @import helper.form
 @import views.html.formTool._
-@import page.backEnd._
+@import page.inscription._
 
 @main("Créez votre compte"){
 	<div class="container">
-	@form(controllers.routes.BackEnd.userPostPost(), 'class -> "form-horizontal") {
+	@form(controllers.routes.Inscription.addUser(), 'class -> "form-horizontal") {
 	<fieldset>
 	<div class="col-sm-12 visible-xs" style="height:60px;">
 	</div>
@@ -16,9 +16,9 @@
 	@inputTextLine(registrationForm("lastName"), label="Nom", placeholder="Entrez votre Nom")
 	@inputTextLine(registrationForm("email"), label="Mail", placeholder="Entrez votre email")
 	@inputTextLine(registrationForm("telephone"), label="Telephone", placeholder="Entrez votre Téléphone")
+	@inputTextLine(registrationForm("releveIdentiteBancaire"), label="RIB", placeholder="Relevé d'identité bancaire")
 	@inputPassword(registrationForm("password"), label="Mot de Passe", placeholder="Entrez votre mot de passe")
 	@inputTextLine(registrationForm("sex"), label="Sexe", placeholder="Entrez votre sex")
-
 	</fieldset>
 	<div class="col-sm-7"></div>
 	<div class="col-sm-1">
