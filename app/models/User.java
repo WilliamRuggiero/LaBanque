@@ -14,15 +14,15 @@ public class User extends Model {
 	@Id
 	public Long userId;
 	
-	public String lastName;
 	public String firstName;
+	public String lastName;
 	public String email;
-	public String password;
 	public String telephone;
+	public String password;
 	public String releveIdentiteBancaire;
 	public String sex;
 	
-	public User(Long userId, String lastName, String firstName, String email, String password, String telephone, String releveIdentiteBancaire, String sex) {
+	public User(Long userId,String firstName, String lastName,  String email, String telephone, String password,  String releveIdentiteBancaire, String sex) {
 		this.userId = userId;
 		this.lastName = lastName;
 		this.firstName = firstName;

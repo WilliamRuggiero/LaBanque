@@ -8,7 +8,7 @@
 
 @main("registerUser"){
 	<div class="container">
-	@form(controllers.routes.BackEnd.demoPostPost(), 'class -> "form-horizontal") {
+	@form(controllers.routes.BackEnd.userPostPost(), 'class -> "form-horizontal") {
 	<fieldset>
 	
 	@inputTextLine(registrationForm("firstName"), label="Prénom")
@@ -22,7 +22,7 @@
 	</fieldset>
 	<div class="col-sm-7"></div>
 	<div class="col-sm-1">
-	<button id="submit" type="submit" value="Submit" class="btn btn-success">Inscrire
+	<button id="submit" type="submit" value="Submit" class="btn btn-success">Inscrire le client
 	</button>
 	</div>
 }
