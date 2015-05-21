@@ -10,7 +10,8 @@
 	<div class="container">
 	@form(controllers.routes.BackEnd.userPostPost(), 'class -> "form-horizontal") {
 	<fieldset>
-	
+	<div class="col-sm-12 visible-xs" style="height:60px;">
+	</div>
 	@inputTextLine(registrationForm("firstName"), label="Prénom")
 	@inputTextLine(registrationForm("lastName"), label="Nom")
 	@inputTextLine(registrationForm("email"), label="Mail")

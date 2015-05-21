@@ -9,7 +9,10 @@
 	<div class="col-sm-4 hidden-xs">
 		<h2 class="titreHeader">La banque à domicile</h2>
 	</div>
-	<div class="col-sm-4 hidden-xs">
+	<div class="col-sm-1 hidden-xs" style="margin-top:28px;">
+	</div>
+	<div class="col-sm-3 hidden-xs" style="margin-top:28px;">
+		<h4>Partie Administrateur</h4>
 		
 	</div>
 
@@ -19,7 +22,7 @@
     <div class="col-sm-4 visible-xs"><button type="button" class="btn btn-warning BoutonHeaderResponsive BoutonCompteResponsive">Créer un compte</button></div> -->
 <!--    <div class="col-sm-2"><button type="button" class="btn btn-success BoutonHeader BoutonCompte">Créer un compte</button></div> -->
 </div>
-<nav class="navbar navbar-default navbar-fixed-top hidden-xs">
+<nav class="navbar navbar-inverse navbar-fixed-top hidden-xs">
 	<div class="container-fluid">
 		<!--   <div class="navbar-header">
       <a class="navbar-brand" href="#"><img class="logoNavbar" src="logo-banque-du-net.png"></a>
@@ -44,19 +47,15 @@
 	</div>
 </nav>
 
-<nav class="navbar navbar-default navbar-fixed-top visible-xs">
+<nav class="navbar navbar-inverse navbar-fixed-top visible-xs">
 	<div class="container-fluid">
 		<!--   <div class="navbar-header">
       <a class="navbar-brand" href="#"><img class="logoNavbar" src="logo-banque-du-net.png"></a>
     </div> -->
 		<div class="row">
 			<ul class="nav navbar-nav listeMenuResponsive">
-
 				<li><img class="LogoResponsiveNav" src="@routes.Assets.at("images/logo-banque-du-net.png")">
-					<button type="button" data-toggle="modal" data-target="#myModal"
-						class="btn btn-xs btn-success">Se connecter</button>
-					<button type="button" class="btn btn-warning btn-xs">Créer
-						un compte</button></li>
+					<h4 style="color:white; text-align: center;">Partie administrateur</h4></li>
 
 				<li class="active"><a href="@routes.Application.index()">Accueil</a></li>
 				<li><a href="@routes.Presentation.presentationBanque()">Présentation
