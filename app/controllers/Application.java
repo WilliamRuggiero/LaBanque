@@ -34,12 +34,7 @@ public class Application extends Controller {
          return ok(str);
     }
     
-    public static Result loginUser(){
-		UserLogin formData = new UserLogin();
-
-		Form<UserLogin> form = Form.form(UserLogin.class).fill(formData);
-	return ok(userLogin.render(form));
-	}
+   
     
     
    

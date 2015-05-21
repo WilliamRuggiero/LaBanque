@@ -16,7 +16,7 @@ GET     /userForget					controllers.Inscription.rappelMotDePasse()
 GET		/Profil						controllers.profilUser.profilUse()
 GET 	/admin/userRegister			controllers.BackEnd.demoPost()
 POST 	/demoPostPost				controllers.BackEnd.demoPostPost()
-GET 	/login						controllers.Application.loginUser()
+GET 	/login						controllers.LoginUser.loginUser()
 
 
 # BackEnd

@@ -11,12 +11,12 @@ import formData.userLogin.UserLogin;
 
 import views.html.page.login.*;
 
-//class LoginUser extends Controller {
+public class LoginUser extends Controller {
 	
-	//public static Result loginUser(){
-		//UserLogin formData = new UserLogin();
+	public static Result loginUser(){
+		UserLogin formData = new UserLogin();
 
-		//Form<UserLogin> form = Form.form(UserLogin.class).fill(formData);
-	//return ok(userLogin.render(form));
-	//}
-//}
+		Form<UserLogin> form = Form.form(UserLogin.class).fill(formData);
+	return ok(userLogin.render(form));
+	}
+}
