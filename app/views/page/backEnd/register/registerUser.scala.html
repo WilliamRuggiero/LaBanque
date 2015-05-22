@@ -6,7 +6,7 @@
 @import views.html.formTool._
 @import page.backEnd._
 
-@mainBackEnd("Entrez un nouvel utilisateur"){
+@mainBackEnd("Entrez un nouvel utilisateur",true){
 	<div class="container">
 	@form(controllers.routes.BackEnd.userPostPost(), 'class -> "form-horizontal") {
 	<fieldset>

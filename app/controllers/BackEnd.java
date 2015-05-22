@@ -27,7 +27,9 @@ public class BackEnd extends Controller {
         	NewUserData data = form.get();
         	data.buildUser();
         	//return redirect(routes.index());		
-        	return ok(registerUser.render(form));
+        	return ok(registerSucess.render());
     	}
     }
 }
+
+//teaching.gaaloul@gmail.com

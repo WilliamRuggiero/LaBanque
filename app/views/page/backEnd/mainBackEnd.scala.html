@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String, ind: Boolean)(content: Html)
 
 <!DOCTYPE html>
 
@@ -17,10 +17,21 @@
         <script src="@routes.Assets.at("javascripts/jquery.js")"></script>
     </head>
     <body style="background-color:grey;">
-    	@layoutBackEnd.header()
+    	
+    	@if(ind == true) {
+  		@layoutBackEnd.header()
+		} else {
+		}
+    	
+    	
     	
         @content
         
-        @layoutBackEnd.footer()
+        @if(ind == true) {
+  		@layoutBackEnd.footer()
+		} else {
+		}
+        
+      
     </body>
 </html>
