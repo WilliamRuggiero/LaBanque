@@ -12,31 +12,31 @@ import views.html.form.*;
 
 public class Inscription extends Controller {
 
-public static Result Inscri() {
-	NewUserData formData = new NewUserData();
+	public static Result Inscri() {
+		NewUserData formData = new NewUserData();
 
-	Form<NewUserData> form = Form.form(NewUserData.class).fill(formData);
-    return ok(userRegistration.render(form));  
-}
-
-public static Result addUser() {
-	Form<NewUserData> form = Form.form(NewUserData.class).bindFromRequest();
-	
-	if(form.hasErrors()) {
-		return ok(userRegistration.render(form));
-	} 
-	else {
-    	NewUserData data = form.get();
-    	data.buildUser();		
-    	return ok(userRegistration.render(form));
+		Form<NewUserData> form = Form.form(NewUserData.class).fill(formData);
+		return ok(userRegistration.render(form));  
 	}
-}
 
-public static Result rappelMotDePasse() {
-	return ok(userForget.render());
-}
-	
-	
-	
+	public static Result addUser() {
+		Form<NewUserData> form = Form.form(NewUserData.class).bindFromRequest();
+
+		if(form.hasErrors()) {
+			return ok(userRegistration.render(form));
+		} 
+		else {
+			NewUserData data = form.get();
+			data.buildUser();		
+			return ok(confirmInscri.render());
+		}
+	}
+
+	public static Result rappelMotDePasse() {
+		return ok(userForget.render());
+	}
+
+
+
 
 }

@@ -23,7 +23,6 @@ public class NewUserData {
 	public String sex;
     
     
-    
     public User buildUser(){
     	User user = new User (userId,firstName,lastName,email,telephone,password,releveIdentiteBancaire,sex);
     	user.save();
