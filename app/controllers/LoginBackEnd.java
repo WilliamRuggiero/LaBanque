@@ -9,7 +9,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import formData.userLogin.UserLogin;
 import formData.userRegister.NewUserData;
-import views.html.page.backEnd.register.*;
+import views.html.page.backEnd.login.*;
 
 public class LoginBackEnd extends Controller {
 	
