@@ -6,19 +6,21 @@
 @import views.html.formTool._
 @import page.backEnd._
 
-@mainBackEnd("registerUser"){
+@mainBackEnd("Entrez un nouvel utilisateur"){
 	<div class="container">
 	@form(controllers.routes.BackEnd.userPostPost(), 'class -> "form-horizontal") {
 	<fieldset>
 	<div class="col-sm-12 visible-xs" style="height:60px;">
 	</div>
-	@inputTextLine(registrationForm("firstName"), label="Prénom")
-	@inputTextLine(registrationForm("lastName"), label="Nom")
-	@inputTextLine(registrationForm("email"), label="Mail")
-	@inputTextLine(registrationForm("telephone"), label="Telephone")
-	@inputPassword(registrationForm("password"), label="Mot de Passe")
-	@inputTextLine(registrationForm("releveIdentiteBancaire"), label="RIB")
-	@inputTextLine(registrationForm("sex"), label="Sexe")
+
+	@inputTextLine(registrationForm("firstName"), label="Prénom", placeholder="prénom")
+	@inputTextLine(registrationForm("lastName"), label="Nom", placeholder="nom")
+	@inputTextLine(registrationForm("email"), label="Mail", placeholder="email")
+	@inputTextLine(registrationForm("telephone"), label="Telephone", placeholder="Téléphone")
+	@inputPassword(registrationForm("password"), label="Mot de Passe", placeholder="mot de passe")
+	@inputTextLine(registrationForm("releveIdentiteBancaire"), label="RIB", placeholder="Relevé d'identité bancaire")
+	@inputTextLine(registrationForm("sex"), label="Sexe", placeholder="Sex")
+
 
 	</fieldset>
 	<div class="col-sm-7"></div>

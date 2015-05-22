@@ -10,11 +10,4 @@ public class UserLogin {
   
     @Required
 	public String password;
-  
-    
-   // public User buildUser(){
-   //	User user = new User (userId,firstName,lastName,email,telephone,password,releveIdentiteBancaire,sex);
-    //	user.save();
-    	//return user;
-    //}
 }

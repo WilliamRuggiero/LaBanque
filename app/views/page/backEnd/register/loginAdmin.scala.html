@@ -1,0 +1,73 @@
+@(loginForm: Form[formData.userLogin.UserLogin])
+
+@import views.html.main
+@import play.api.mvc.Result
+@import helper.form
+@import views.html.formTool._
+@import page.backEnd._
+
+@mainBackEnd("Connectez vous au backoffice"){
+	<div class="container">
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	@form(controllers.routes.LoginBackEnd.connectBackOffice(), 'class -> "form-horizontal") {
+	<fieldset>
+	<div class="col-sm-12 visible-xs" style="height:60px;">
+	</div>
+	@inputTextLine(loginForm("email"), label="Email", placeholder="Entrez votre email")
+	@inputPassword(loginForm("password"), label="Mot de Passe", placeholder="Entrez votre mot de passe")
+	</fieldset>
+	<div class="col-sm-7"></div>
+	<div class="col-sm-1">
+	<button id="submit" type="submit" value="Submit" class="btn btn-success">Connexion
+	</button>
+	</div>
+	}
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+	<div class ="row">
+		<p></p>
+	</div>
+}
