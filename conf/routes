@@ -22,7 +22,8 @@ POST	/newUser					controllers.Inscription.addUser()
 
 # BackEnd
 #GET 	/login						controllers.Application.login()
-#GET 	/indexAdmin					controllers.Home.indexAdmin()
+GET 	/admin						controllers.LoginBackEnd.indexAdmin()
+POST 	/admin/accueil				controllers.LoginBackEnd.connectBackOffice()
 #GET 	/admin/userRegister			controllers.
 #POST   /login	                    controllers.Application.authenticate()
 
