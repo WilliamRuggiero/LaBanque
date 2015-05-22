@@ -8,7 +8,7 @@
              class="form-control" 
              id="@field.id" 
              name="@field.name" 
-             value="@field.value.getOrElse("")"
+             value="@field.value.getOrElse("1")"
              placeholder="@placeholder" />
       <span class="help-block">@help</span>
       <span class="help-block">@{field.error.map { error => error.message }}</span>
