@@ -7,17 +7,17 @@ public class NewUserData {
     
     public Long userId;
 
-    @Required
+    @Required(message = "Ce champ est obligatoire")
     public String firstName;
-    @Required
+    @Required(message = "Ce champ est obligatoire")
     public String lastName;
-    @Required
+    @Required(message = "Ce champ est obligatoire")
     public String email;
-    @Required
+    @Required(message = "Ce champ est obligatoire")
     public String telephone;
-    @Required
+    @Required(message = "Ce champ est obligatoire")
 	public String password;
-    @Required
+    @Required(message = "Ce champ est obligatoire")
 	public String releveIdentiteBancaire;
     @Required
 	public String sex;
