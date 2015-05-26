@@ -15,8 +15,8 @@
 
 	@inputTextLine(registrationForm("firstName"), label="Prénom", placeholder="prénom")
 	@inputTextLine(registrationForm("lastName"), label="Nom", placeholder="nom")
-	@inputTextLine(registrationForm("email"), label="Mail", placeholder="email")
-	@inputTextLine(registrationForm("telephone"), label="Telephone", placeholder="Téléphone")
+	@inputTypeEmail(registrationForm("email"), label="Mail", placeholder="email")
+	@inputTelephone(registrationForm("telephone"), label="Telephone", placeholder="Téléphone")
 	@inputPassword(registrationForm("password"), label="Mot de Passe", id="password", placeholder="mot de passe")
 	@inputTextLine(registrationForm("releveIdentiteBancaire"), label="RIB", placeholder="Relevé d'identité bancaire")
 	@inputTextLine(registrationForm("sex"), label="Sexe", placeholder="Genre")
