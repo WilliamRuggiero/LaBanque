@@ -6,6 +6,7 @@ import play.mvc.Controller;
 import formData.userRegister.NewUserData;
 import views.html.page.backEnd.register.*;
 import views.html.page.indexContent.*;
+import views.html.page.backEnd.*;
 
 public class BackEnd extends Controller {
 
@@ -30,6 +31,10 @@ public class BackEnd extends Controller {
         	return ok(registerSucess.render());
     	}
     }
+ 	
+ 	public static Result listClients(){
+ 		return ok(listClients.render());
+ 	}
 }
 
 //teaching.gaaloul@gmail.com

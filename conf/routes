@@ -14,8 +14,6 @@ GET 	/userOverview				controllers.profilUser.profilUse()
 GET     /userRegister				controllers.Inscription.Inscri()
 GET     /userForget					controllers.Inscription.rappelMotDePasse()
 GET		/Profil						controllers.profilUser.profilUse()
-GET 	/admin/userRegister			controllers.BackEnd.userPost()
-POST 	/demoPostPost				controllers.BackEnd.userPostPost()
 GET 	/login						controllers.LoginUser.loginUser()
 POST	/newUser					controllers.Inscription.addUser()
 
@@ -23,8 +21,10 @@ POST	/newUser					controllers.Inscription.addUser()
 # BackEnd
 #GET 	/login						controllers.Application.login()
 GET 	/admin						controllers.LoginBackEnd.indexAdmin()
+GET 	/admin/userRegister			controllers.BackEnd.userPost()
+POST 	/demoPostPost				controllers.BackEnd.userPostPost()
 POST 	/admin/accueil				controllers.LoginBackEnd.connectBackOffice()
-#GET 	/admin/userRegister			controllers.
+GET		/admin/listClients			controllers.BackEnd.listClients()
 #POST   /login	                    controllers.Application.authenticate()
 
 
