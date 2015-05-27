@@ -42,4 +42,12 @@ public class User extends Model {
             .eq("password", password)
             .findUnique();
     }
+	//Rechercher l'utilisateur avec cet Email
+	 public static User findByEmail(String email) {
+         return find.where().eq("email", email).findUnique();
+     }
+	 
+	 public static int findRowCount(User u, String email){
+		 return find.where().eq("email", email).findRowCount();
+	 }
 }

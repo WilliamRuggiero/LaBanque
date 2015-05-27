@@ -5,10 +5,10 @@ import play.data.validation.Constraints.Required;
 
 public class UserLogin {
 
-	@Required
+	@Required(message = "ce champ est obligatoire")
 	public String email;
 
-	@Required
+	@Required(message = "ce champ est obligatoire")
 	public String password;
 
 	public String validate() {

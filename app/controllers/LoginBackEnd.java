@@ -1,5 +1,4 @@
 package controllers;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +20,7 @@ public class LoginBackEnd extends Controller {
 		Form<UserLogin> form = Form.form(UserLogin.class).fill(formData);
 		return ok(loginAdmin.render(form));
 	}
-	
+
 	//Ouvre la session
 	public static Result connectBackOffice() {
     	Form<UserLogin> form = Form.form(UserLogin.class).bindFromRequest();
@@ -32,15 +31,24 @@ public class LoginBackEnd extends Controller {
     		//return ok(loginAdmin.render(form));
     	} 
     	else {
+    		User u = User.findByEmail(form.get().email);
+    		Integer rowCount = u.find.where().eq("email", form.get().email).findRowCount(); 
+    		if(u.isAdmin == false){
+    			flash("error", "Vous n'êtes pas administrateur");
+        		return badRequest(loginAdmin.render(form));
+    		}
+    		else{
     		session("email", form.get().email);	
-        	return ok(accueil.render());
+        	//return redirect(routes.LoginBackEnd.accueilAdmin());
+    		return ok(accueil.render(User.findByEmail(form.get().email)));
+    		}
     	}
     }
 	
 	//Ferme la session
-	public static Result logout() {
-        session().clear();
-        flash("success", "Vous êtes déconnecté(e)");
-        return redirect(routes.LoginBackEnd.indexAdmin());
-    }
+//	public static Result logout() {
+//        session().clear();
+//        flash("success", "Vous êtes déconnecté(e)");
+//        return redirect(routes.LoginBackEnd.indexAdmin());
+//    }
 }

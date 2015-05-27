@@ -1,16 +1,17 @@
 @import views.html.main
 @import play.api.mvc.Result
+@import scala.collection.mutable.Map
 @import helper.form
 @import views.html.formTool._
 @import page.backEnd._
 @import controllers.LoginBackEnd
 
-
+@(user : User)
 @mainBackEnd("Bienvenue dans le Backoffice",true){
 	<div class="container">
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
-			<h4>Bienvenue dans le backoffice</h4>
+			<h4>Bienvenue dans le backoffice  @user.email @user.firstName @user.lastName (Pour vous montrer qu'on récupère tout)</h4>
 		</div>
 		<div class="col-sm-4"></div>
 	</div>

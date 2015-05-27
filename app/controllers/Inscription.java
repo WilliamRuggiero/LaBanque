@@ -1,5 +1,6 @@
 package controllers;
 
+import models.User;
 import formData.userRegister.NewUserData;
 import play.data.Form;
 import play.mvc.Controller;
@@ -26,9 +27,18 @@ public class Inscription extends Controller {
 			return ok(userRegistration.render(form));
 		} 
 		else {
+			User u = User.findByEmail(form.get().email);
+			//POUR RENDRE L'EMAIL UNIQUE
+			Integer rowCount = u.find.where().eq("email", form.get().email).findRowCount(); 
+    		if(rowCount != 0){
+    			flash("error", "Cet email existe déjà!");
+    			return ok(userRegistration.render(form));
+    		}
+    		else{
 			NewUserData data = form.get();
 			data.buildUser();		
 			return ok(confirmInscri.render());
+    		}
 		}
 	}
 

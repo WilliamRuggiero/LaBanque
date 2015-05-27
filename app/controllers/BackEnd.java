@@ -26,10 +26,20 @@ public class BackEnd extends Controller {
     		return ok(registerUser.render(form));
     	} 
     	else {
-        	NewUserData data = form.get();
-        	data.buildUser();
-        	//return redirect(routes.index());		
-        	return ok(registerSucess.render());
+    		User u = User.findByEmail(form.get().email);
+    		//POUR RENDRE L'EMAIL UNIQUE
+    		Integer rowCount = u.find.where().eq("email", form.get().email).findRowCount(); 
+    		if(rowCount != 0){
+    			flash("error", "Cet email existe déjà!");
+    			return ok(registerUser.render(form));
+    		}
+    		else{
+	        	NewUserData data = form.get();
+	        	data.buildUser();
+	        	//return redirect(routes.index());		
+	        	return ok(registerSucess.render());
+    		}
+        	
     	}
     }
  	
