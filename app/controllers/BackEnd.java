@@ -1,5 +1,6 @@
 package controllers;
 
+import models.User;
 import play.mvc.Result;
 import play.data.Form;
 import play.mvc.Controller;
@@ -33,7 +34,7 @@ public class BackEnd extends Controller {
     }
  	
  	public static Result listClients(){
- 		return ok(listClients.render());
+ 		return ok(listClients.render(User.find.orderBy("userId").findList()));
  	}
 }
 

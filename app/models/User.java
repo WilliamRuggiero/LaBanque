@@ -2,7 +2,7 @@ package models;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
+import play.data.validation.Constraints;
 
 import play.db.ebean.Model;
 
@@ -21,8 +21,9 @@ public class User extends Model {
 	public String password;
 	public String releveIdentiteBancaire;
 	public String sex;
+	public boolean isAdmin;
 	
-	public User(Long userId,String firstName, String lastName,  String email, String telephone, String password,  String releveIdentiteBancaire, String sex) {
+	public User(Long userId,String firstName, String lastName,  String email, String telephone, String password,  String releveIdentiteBancaire, String sex, boolean isAdmin) {
 		this.userId = userId;
 		this.lastName = lastName;
 		this.firstName = firstName;
@@ -31,6 +32,14 @@ public class User extends Model {
 		this.telephone = telephone;
 		this.releveIdentiteBancaire = releveIdentiteBancaire;
 		this.sex = sex;
+		this.isAdmin = isAdmin;
 	}
-
+	
+	// Cherche un utilisateur avec cet email et ce password
+	public static User login(String email, String password) {
+        return find.where()
+            .eq("email", email)
+            .eq("password", password)
+            .findUnique();
+    }
 }

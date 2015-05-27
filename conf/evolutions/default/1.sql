@@ -12,6 +12,7 @@ create table user (
   password                  varchar(255),
   releve_identite_bancaire  varchar(255),
   sex                       varchar(255),
+  is_admin                  boolean,
   constraint pk_user primary key (user_id))
 ;
 

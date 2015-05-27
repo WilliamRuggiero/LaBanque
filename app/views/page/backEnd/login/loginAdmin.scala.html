@@ -5,6 +5,7 @@
 @import helper.form
 @import views.html.formTool._
 @import page.backEnd._
+@import controllers.LoginBackEnd
 
 
 @mainBackEnd("Connectez vous au backoffice",false){
@@ -40,6 +41,14 @@
 	@inputTextLine(loginForm("email"), label="Email", placeholder="Entrez votre email")
 	@inputPassword(loginForm("password"), label="Mot de Passe", placeholder="Entrez votre mot de passe")
 	</fieldset>
+	<div class ="col-sm-5"></div>
+	<div class ="col-sm-7">
+		@if(flash.containsKey("error")) {
+	        <div class="">
+	            <strong style = "color : #f0ad4e;">@flash.get("error")</strong>
+	        </div>
+	    }
+    </div>
 	<div class="col-sm-7"></div>
 	<div class="col-sm-1">
 	<button id="submit" type="submit" value="Submit" class="btn btn-success">Connexion
