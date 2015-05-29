@@ -1,14 +1,16 @@
 package controllers;
 
 import models.User;
+import play.mvc.*;
 import play.mvc.Result;
 import play.data.Form;
 import play.mvc.Controller;
 import formData.userRegister.NewUserData;
 import views.html.page.backEnd.register.*;
-import views.html.page.indexContent.*;
 import views.html.page.backEnd.*;
 
+//POUR QUE SEULS CEUX QUI SONT LOGUES ACCEDENT A CES PAGES
+@Security.Authenticated(Securite.class)
 public class BackEnd extends Controller {
 
 	public static Result userPost(){

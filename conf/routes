@@ -16,10 +16,10 @@ GET 	/login						controllers.LoginUser.loginUser()
 POST	/newUser					controllers.Inscription.addUser()
 POST	/Profil						controllers.LoginUser.loUser()
 
-
 # BackEnd
 #GET 	/login						controllers.Application.login()
 GET 	/admin						controllers.LoginBackEnd.indexAdmin()
+GET		/logout						controllers.LoginBackEnd.logout()
 GET 	/admin/userRegister			controllers.BackEnd.userPost()
 POST 	/demoPostPost				controllers.BackEnd.userPostPost()
 POST 	/admin/accueil				controllers.LoginBackEnd.connectBackOffice()
