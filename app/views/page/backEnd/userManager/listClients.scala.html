@@ -6,21 +6,24 @@
 
 
 @mainBackEnd("Liste des clients",true){
-
-	@dataTable("demissionTable", scala.collection.immutable.List("Nom","Prénom")) {
+<div class="container">
+	<div class="row">
+		<h2 style="visibility: hidden;">tata</h2>
+	</div>
+</div>
+	@dataTable("userList", scala.collection.immutable.List("Nom","Prénom","Mail","Telephone","RIB","Administrateur ?"), "Attention ces données peuvent être confidentielles, si vous ne deviez pas être sur cette page, merci de contacter votre administrateur.") {
 	
 	@for(User<-users){
 
 
 <tr>
-	<td>@User.lastName</td>
-	<td>@User.firstName</td>
-	<td>@User.email</td>
-	<td>@User.telephone</td>
-	<td>@User.releveIdentiteBancaire</td>
-	<td>@User.isAdmin</td>
+	<td style="text-align: center;">@User.lastName</td>
+	<td style="text-align: center;">@User.firstName</td>
+	<td style="text-align: center;">@User.email</td>
+	<td style="text-align: center;">@User.telephone</td>
+	<td style="text-align: center;">@User.releveIdentiteBancaire</td>
+	<td style="text-align: center;">@User.isAdmin</td>
 </tr>
-
 
 <!-- 		<div class="container">
 		<div class = "row">

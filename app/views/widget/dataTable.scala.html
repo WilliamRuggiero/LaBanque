@@ -1,47 +1,67 @@
-@(tableName: String, columnNameList: List[String])(dataContent: Html)
+@(tableName: String, columnNameList: List[String], moreContent:String)(dataContent: Html)
 
 		<div class="page-tables">
 			<!-- Table -->
 			<div class="table-responsive">
-                <div id="@(tableName)Id_wrapper" class="dataTables_wrapper" role="grid">
+			
+			<div class="col-sm-12" style="text-align: center;"> @moreContent </div> 
+                <div id="@(tableName)Id_wrapper" class="dataTables_wrapper col-sm-12" role="grid">
 					<table style="width: 100%;" class="dataTable" id="@(tableName)Id"
                         border="0" cellpadding="0" cellspacing="0" width="100%">
 
+						 
 						<thead>
 							<tr role="row">
                                 @columnNameList.map { columnName =>
-
-								<th	colspan="1" rowspan="1" tabindex="0" role="columnheader">@columnName</th>
+								<th style="background-color: white; text-align: center;" colspan="1" rowspan="1" tabindex="0" role="columnheader">@columnName</th>
                                 }
 							</tr>
 						</thead>
 
-                        <tbody role="alert">
+                        <tbody style="background-color: #DCDCDC;" role="alert">
                             @dataContent
                         </tbody>
 
 						<tfoot>
 							<tr>
                                 @columnNameList.map { columnName =>
-								<th	colspan="1" rowspan="1">@columnName</th>
+								<th	style="background-color: white; text-align: center;" colspan="1" rowspan="1">@columnName</th>
                                 }
 							</tr>
 						</tfoot>
-
-
-
 					</table>
 				</div>
 				<div class="clearfix"></div>
 			</div>
 		</div>
-
 <script type="text/javascript" charset="utf-8">
 
 $(document).ready(function() {
     $('#@(tableName)Id').dataTable({
-	   "sPaginationType": "full_numbers"
-	});
+    	paging:true,
+ 		responsive:true,
+    	 "language": {
+    			    "sProcessing":     "Traitement en cours...",
+    			    "sSearch":         "Rechercher&nbsp;:",
+    			    "sLengthMenu":     "Afficher _MENU_ &eacute;l&eacute;ments",
+    			    "sInfo":           "Affichage de l'&eacute;l&eacute;ment _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
+    			    "sInfoEmpty":      "Affichage de l'&eacute;l&eacute;ment 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
+    			    "sInfoFiltered":   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+    			    "sInfoPostFix":    "",
+    			    "sLoadingRecords": "Chargement en cours...",
+    			    "sZeroRecords":    "Aucun &eacute;l&eacute;ment &agrave; afficher",
+    			    "sEmptyTable":     "Aucune donn&eacute;e disponible dans le tableau",
+    			    "oPaginate": {
+    			        "sFirst":      "Premier",
+    			        "sPrevious":   "Pr&eacute;c&eacute;dent",
+    			        "sNext":       "Suivant",
+    			        "sLast":       "Dernier"
+    			    },
+    			    "oAria": {
+    			        "sSortAscending":  ": activer pour trier la colonne par ordre croissant",
+    			        "sSortDescending": ": activer pour trier la colonne par ordre d&eacute;croissant"
+    			    }
+    		  }
+    });
 });
-</script>
-
+	</script>
