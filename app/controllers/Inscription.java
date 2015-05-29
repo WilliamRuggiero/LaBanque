@@ -36,8 +36,9 @@ public class Inscription extends Controller {
     		}
     		else{
 			NewUserData data = form.get();
-			data.buildUser();		
-			return ok(confirmInscri.render());
+			data.buildUser();
+			User v = User.findByEmail(form.get().email);
+			return ok(confirmInscri.render(v));
     		}
 		}
 	}

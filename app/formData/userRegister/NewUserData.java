@@ -22,7 +22,7 @@ public class NewUserData {
     public String telephone;
     
     @Required(message = "Ce champ est obligatoire")
-    @Constraints.MinLength(6) //message = "Ce champ demande au minimum 6 caractères")
+    @Constraints.MinLength(value =6, message="Veuillez entrer au moins 6 caractères") //message = "Ce champ demande au minimum 6 caractères")
 	public String password;
     
     @Required(message = "Ce champ est obligatoire")
