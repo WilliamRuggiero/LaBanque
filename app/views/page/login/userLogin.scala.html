@@ -4,36 +4,35 @@
 @import play.api.mvc.Result
 @import helper.form
 @import views.html.formTool._
+@import controllers.LoginUser
 
 @main("Page de Connexion"){
 
+<div class="container">
+
 <div class="col-sm-12 visible-xs" style="width:20px; height:20px;">
-
 </div>
-<fieldset>
-<div class="col-sm-3">
-</div>
-<div class="col-sm-6">
-@inputEmail(loginForm("email"), label="email", placeholder="Entrer mail")
-</div>
-<div class="col-sm-3">
-</div>
-<div class="col-sm-3">
-</div>
-<div class="col-sm-6">
-@inputPassword(loginForm("password"), label="password", placeholder="Entrer mot de passe")
-</div>
-<div class="col-sm-3">
-</div>
-</fieldset>
-
-<div class="col-sm-7"></div>
+	@form(controllers.routes.LoginUser.loUser(), 'class -> "form-horizontal") {
+	<fieldset>
+		<div class="col-sm-12 visible-xs" style="height:60px;">
+		</div>
+		@inputTextLine(loginForm("email"), label="Email", placeholder="Entrez votre email")
+		@inputPassword(loginForm("password"), label="Mot de Passe", placeholder="Entrez votre mot de passe")
+	</fieldset>
+	<div class ="col-sm-5"></div>
+	<div class ="col-sm-7">
+		@if(flash.containsKey("error")) {
+	        <div class="">
+	            <strong style = "color : #d9534f;">@flash.get("error")</strong>
+	        </div>
+	    }
+    </div>
+	<div class="col-sm-7"></div>
 	<div class="col-sm-1">
-	<div class="col-sm-1 visible-xs">
-	<button id="submit" type="submit" value="Submit" class="btn btn-success">Se connecter
+	<button id="submit" type="submit" value="Submit" class="btn btn-success">Connexion
 	</button>
 	</div>
-	</div>
-
+	}
+</div>
 
 }
