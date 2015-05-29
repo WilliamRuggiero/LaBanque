@@ -8,6 +8,7 @@ import formData.userRegister.NewUserData;
 import views.html.page.backEnd.register.*;
 import views.html.page.indexContent.*;
 import views.html.page.backEnd.*;
+import views.html.page.backEnd.userManager.*;
 
 public class BackEnd extends Controller {
 

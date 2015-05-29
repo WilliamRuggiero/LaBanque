@@ -1,11 +1,28 @@
-@( users: List[models.User])
+@(users: List[models.User])
 
 @import views.html.page.backEnd._
+@import views.html.page.backEnd.mainBackEnd
+@import views.html.widget._
 
 
 @mainBackEnd("Liste des clients",true){
+
+	@dataTable("demissionTable", scala.collection.immutable.List("Nom","Prénom")) {
 	
-	<div class="container">
+	@for(User<-users){
+
+
+<tr>
+	<td>@User.lastName</td>
+	<td>@User.firstName</td>
+	<td>@User.email</td>
+	<td>@User.telephone</td>
+	<td>@User.releveIdentiteBancaire</td>
+	<td>@User.isAdmin</td>
+</tr>
+
+
+<!-- 		<div class="container">
 		<div class = "row">
 			<div class=col-sm-4></div>
 			<div class=col-sm-4><h3>Liste des clients</h3></div>
@@ -16,7 +33,7 @@
 			<div class=col-sm-4>
 				<h3>
 					@for(user <- users) {
-<!-- 						POUR RECUPERER RIEN QUE LES NON ADMINISTRATEURS -->
+					POUR RECUPERER RIEN QUE LES NON ADMINISTRATEURS
 						@if(user.isAdmin == false) {
                	   			<li>@user.firstName @user.lastName</li>
                	   		}
@@ -25,5 +42,8 @@
 			</div>
 			<div class=col-sm-4></div>
 		</div>
-	</div>
+	</div> -->
+	}
+	
+	}
 }
