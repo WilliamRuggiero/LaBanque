@@ -8,6 +8,7 @@ import play.mvc.Controller;
 import formData.userRegister.NewUserData;
 import views.html.page.backEnd.register.*;
 import views.html.page.backEnd.*;
+import views.html.page.backEnd.userManager.*;
 
 //POUR QUE SEULS CEUX QUI SONT LOGUES ACCEDENT A CES PAGES
 @Security.Authenticated(Securite.class)
