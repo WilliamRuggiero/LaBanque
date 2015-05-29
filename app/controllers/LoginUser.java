@@ -15,6 +15,7 @@ import views.html.page.userOverview.userOverview;
 public class LoginUser extends Controller {
 	
 	public static Result loginUser(){
+		session().clear();
 		UserLogin formData = new UserLogin();
 
 		Form<UserLogin> form = Form.form(UserLogin.class).fill(formData);
@@ -39,8 +40,7 @@ public class LoginUser extends Controller {
 	    		}
 	    		else{
 	    		session("email", form.get().email);	
-	        	//return redirect(routes.LoginBackEnd.accueilAdmin());
-	    		return ok(userOverview.render(User.findByEmail(form.get().email)));
+	    		return redirect(routes.Profil.profilUser());
 	    		}
 	    	}
 	    }

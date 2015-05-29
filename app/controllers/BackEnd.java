@@ -2,12 +2,11 @@ package controllers;
 
 import models.User;
 import play.mvc.*;
-import play.mvc.Result;
 import play.data.Form;
 import play.mvc.Controller;
 import formData.userRegister.NewUserData;
+import views.html.page.backEnd.login.accueil;
 import views.html.page.backEnd.register.*;
-import views.html.page.backEnd.*;
 import views.html.page.backEnd.userManager.*;
 
 //POUR QUE SEULS CEUX QUI SONT LOGUES ACCEDENT A CES PAGES
@@ -18,7 +17,7 @@ public class BackEnd extends Controller {
 		NewUserData formData = new NewUserData();
 
 		Form<NewUserData> form = Form.form(NewUserData.class).fill(formData);
-        return ok(registerUser.render(form));  
+        return ok(registerUser.render(form, User.findByEmail(session().get("email"))));  
 	}
 	
 	
@@ -26,7 +25,7 @@ public class BackEnd extends Controller {
     	Form<NewUserData> form = Form.form(NewUserData.class).bindFromRequest();
     	
     	if(form.hasErrors()) {
-    		return ok(registerUser.render(form));
+    		return ok(registerUser.render(form, User.findByEmail(session().get("email"))));
     	} 
     	else {
     		User u = User.findByEmail(form.get().email);
@@ -34,7 +33,7 @@ public class BackEnd extends Controller {
     		Integer rowCount = u.find.where().eq("email", form.get().email).findRowCount(); 
     		if(rowCount != 0){
     			flash("error", "Cet email existe déjà!");
-    			return ok(registerUser.render(form));
+    			return ok(registerUser.render(form, User.findByEmail(session().get("email"))));
     		}
     		else{
 	        	NewUserData data = form.get();
@@ -46,8 +45,12 @@ public class BackEnd extends Controller {
     	}
     }
  	
+ 	public static Result accueilAdmin(){
+		return ok(accueil.render(User.findByEmail(session().get("email"))));
+	}
+ 	
  	public static Result listClients(){
- 		return ok(listClients.render(User.find.orderBy("userId").findList()));
+ 		return ok(listClients.render(User.find.orderBy("userId").findList(), User.findByEmail(session().get("email"))));
  	}
 }
 

@@ -6,6 +6,7 @@ import models.User;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import play.mvc.Security;
 import formData.userLogin.UserLogin;
 import formData.userRegister.NewUserData;
 //import views.html.page.backEnd.listClients;
@@ -15,7 +16,7 @@ import views.html.page.backEnd.login.*;
 public class LoginBackEnd extends Controller {
 
 	public static Result indexAdmin(){
-
+		session().clear();
 		UserLogin formData = new UserLogin();
 
 		Form<UserLogin> form = Form.form(UserLogin.class).fill(formData);
@@ -39,11 +40,11 @@ public class LoginBackEnd extends Controller {
 			}
 			else{
 				session("email", form.get().email);	
-				//return redirect(routes.LoginBackEnd.accueilAdmin());
-				return ok(accueil.render(User.findByEmail(form.get().email)));
+				return redirect(routes.BackEnd.accueilAdmin());
 			}
 		}
 	}
+	
 
 	//Ferme la session
 	public static Result logout() {

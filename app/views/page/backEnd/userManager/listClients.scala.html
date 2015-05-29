@@ -1,4 +1,4 @@
-@(users: List[models.User])
+@(users: List[models.User], user: User)
 
 @import views.html.page.backEnd._
 @import views.html.page.backEnd.mainBackEnd
@@ -6,13 +6,13 @@
 
 
 @mainBackEnd("Liste des clients",true){
+
 <div class="container">
 	<div class="row">
 		<h2 style="visibility: hidden;">tata</h2>
 	</div>
 </div>
 	@dataTable("userList", scala.collection.immutable.List("Nom","Prénom","Mail","Telephone","RIB","Administrateur ?"), "Attention ces données peuvent être confidentielles, si vous ne deviez pas être sur cette page, merci de contacter votre administrateur.") {
-	
 	@for(User<-users){
 
 

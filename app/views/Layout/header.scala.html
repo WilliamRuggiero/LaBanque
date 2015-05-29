@@ -10,9 +10,12 @@
 		<h2 class="titreHeader">La banque à domicile</h2>
 	</div>
 	<div class="col-sm-4 hidden-xs">
-		<button type="button" data-toggle="modal" data-target="#myModal"
-			class="btn btn-success BoutonHeader BoutonConnecter">Se
-			connecter</button>
+<!-- 		<button type="button" data-toggle="modal" data-target="#myModal"  -->
+<!--  			class="btn btn-success BoutonHeader BoutonConnecter">Se  -->
+<!-- 			connecter</button>  -->
+ 		<a href = "@routes.LoginUser.loginUser()"><button type="button"
+ 			class="btn btn-success BoutonHeader BoutonConnecter">Se 
+			connecter</button></a>
 		<a href="@routes.Inscription.Inscri()"><button type="button"
 				class="btn btn-warning BoutonHeader BoutonCompte">Créer un
 				compte</button></a>
@@ -32,7 +35,7 @@
 					<form role="form">
 						<div class="form-group">
 							<label for="usrname"><span
-								class="glyphicon glyphicon-user"></span> Identifiant</label> <input
+								class="glyphicon glyphicon-user">Identifiant</span> </label> <input
 								type="email" class="form-control" id="usrname"
 								placeholder="Entrer email">
 						</div>
