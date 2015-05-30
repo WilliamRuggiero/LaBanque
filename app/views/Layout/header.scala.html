@@ -1,4 +1,4 @@
-
+@(user : User)
 <div class="row">
 	<div class="col-sm-4 hidden-xs">
 		<a href="@routes.Application.index()"><img class="logoHeader"
@@ -13,12 +13,20 @@
 <!-- 		<button type="button" data-toggle="modal" data-target="#myModal"  -->
 <!--  			class="btn btn-success BoutonHeader BoutonConnecter">Se  -->
 <!-- 			connecter</button>  -->
- 		<a href = "@routes.LoginUser.loginUser()"><button type="button"
+		@if(user != null && user.isAdmin != true ){
+			<a href="@routes.Profil.profilUser()"><button type="button"
+				class="btn btn-warning BoutonHeader BoutonCompte">Mon Profil</button></a>
+			<a href = "@routes.LoginUser.logout()"><button type="button"
  			class="btn btn-success BoutonHeader BoutonConnecter">Se 
-			connecter</button></a>
-		<a href="@routes.Inscription.Inscri()"><button type="button"
-				class="btn btn-warning BoutonHeader BoutonCompte">Créer un
-				compte</button></a>
+			déconnecter</button></a>
+		}else{
+	 		<a href = "@routes.LoginUser.loginUser()"><button type="button"
+	 			class="btn btn-success BoutonHeader BoutonConnecter">Se 
+				connecter</button></a>
+			<a href="@routes.Inscription.Inscri()"><button type="button"
+					class="btn btn-warning BoutonHeader BoutonCompte">Créer un
+					compte</button></a>
+		}
 	</div>
 
 	<!-- Modal -->
@@ -122,7 +130,7 @@ $(document).ready(function(){
 			<ul class="nav navbar-nav listeMenuResponsive">
 
 				<li><img class="LogoResponsiveNav" src="@routes.Assets.at("images/logo-banque-du-net.png")">
-					<button type="button" data-toggle="modal" data-target="#myModal"
+					<button type="button"
 						class="btn btn-xs btn-success">Se connecter</button>
 					<button type="button" class="btn btn-warning btn-xs">Créer
 						un compte</button></li>

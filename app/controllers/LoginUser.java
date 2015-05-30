@@ -44,4 +44,11 @@ public class LoginUser extends Controller {
 	    		}
 	    	}
 	    }
+		
+		//Ferme la session
+		public static Result logout() {
+			session().clear();
+			flash("success", "Vous êtes déconnecté(e)");
+			return redirect(routes.LoginUser.loginUser());
+		}
 }
