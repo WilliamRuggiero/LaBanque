@@ -7,6 +7,7 @@ import play.mvc.Controller;
 import views.html.page.userOverview.userOverview;
 
 //POUR QUE SEULS CEUX QUI SONT LOGUES ACCEDENT A CES PAGES
+
 @Security.Authenticated(SecuriteUser.class)
 public class Profil extends Controller{
 	public static Result profilUser(){
