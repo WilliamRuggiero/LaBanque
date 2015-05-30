@@ -19,6 +19,11 @@
 <li>Placer vos excédents de trésorerie sans avoir à y penser avec Régulys et C.CéPargne.</li>
 </ul>
 <div class="col-sm-12" style="height: 25px;" ></div>
+			<h4 class="text-info">
+				Rappel des offres la Banque du Net
+			</h4>
+			<div style="height:20px;"></div>
+			
 			<table class="table" style="text-align:center;">
 				<thead>
 					<tr class="info">
@@ -57,7 +62,12 @@
 			<h3 class="text-muted">
 				Ouvrez votre compte chez nous
 				<h3 style="visibility: hidden"></h3>
-			</h3> <button type="button" class="btn btn-block btn-info">Vous ne le regretterez pas</button>
+			</h3> 
+			<button type="button" onclick="self.location.href='@routes.Souscription.compteCourant1()'"class="btn btn-block btn-info">Rejoignez votre banque</button>
+			<div style="height: 50px;"></div>
+			<form method="get" action="@routes.Assets.at("documents/Convention_de_compte_CCP.pdf")"><button type="submit" class="btn btn-block btn-default"><span class="glyphicon glyphicon-floppy-disk"></span>    Convention de compte</button></form>
+			<div style="height: 10px;"></div>
+			<form method="get" action="@routes.Assets.at("documents/pdf_guide_mobilite_bancaire_2014.pdf")"><button type="submit" class="btn btn-block btn-default"><span class="glyphicon glyphicon-floppy-disk"></span>    Guide de mobilité bancaire</button></form> 
 		</div>
 	</div>
 </div>

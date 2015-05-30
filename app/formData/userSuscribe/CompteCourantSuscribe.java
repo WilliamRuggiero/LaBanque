@@ -1,0 +1,55 @@
+package formData.userSuscribe;
+
+import java.sql.Date;
+
+
+import models.Customer;
+import play.data.validation.Constraints.Required;
+
+public class CompteCourantSuscribe {
+    
+    public Long customerId;
+
+    @Required(message = "Ce champ est obligatoire")
+    public String genre;
+    
+    @Required(message = "Ce champ est obligatoire")
+    public String lastName;
+    
+    @Required(message = "Ce champ est obligatoire")
+    public String bornName;
+    
+    @Required(message = "Ce champ est obligatoire")
+    public Date birthday;
+    
+    @Required(message = "Ce champ est obligatoire")
+    public String nationality;
+    
+    @Required(message = "Ce champ est obligatoire")
+    public String whereIsBorn;
+    
+    @Required(message = "Ce champ est obligatoire")
+    public String familySituation;
+    
+    @Required(message = "Ce champ est obligatoire")
+    public String fiscalResidence;
+    
+    @Required(message = "Ce champ est obligatoire")
+    public String knowTheBank;
+    
+    public Customer buildCustomer(){
+    	Customer cust = new Customer (customerId, 
+    			genre,
+    			lastName,
+    			bornName, 
+    			birthday, 
+    			nationality, 
+    			whereIsBorn, 
+    			familySituation, 
+    			fiscalResidence,
+    			knowTheBank);
+    	
+    	cust.save();
+    	return cust;
+    }
+}
