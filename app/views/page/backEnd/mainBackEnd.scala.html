@@ -40,7 +40,8 @@
     <body style="background-color:grey;">
     	
     	@if(ind == true) {
-  		@layoutBackEnd.header()
+    	
+  		@layoutBackEnd.header(User.findByEmail(session().get("email")))
 		} else {
 		}
     	

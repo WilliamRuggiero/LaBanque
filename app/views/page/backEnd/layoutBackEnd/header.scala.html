@@ -1,4 +1,4 @@
-
+@(user : User)
 <div class="row">
 	<div class="col-sm-4 hidden-xs">
 		<a href="@routes.BackEnd.accueilAdmin()"><img class="logoHeader"
@@ -44,8 +44,7 @@
 				<li style="visibility: hidden;">Deconnexion</li>
 				<li style="visibility: hidden;">Deconnexion</li>
 				<li style="visibility: hidden;">Deconnexion</li>
-				<li style="visibility: hidden;">Deconnexion</li>
-				<li style="visibility: hidden;">Deconnexion</li>
+				<li><a>@user.firstName @user.lastName</a></li>
 				<li><a href = "@routes.LoginBackEnd.logout()">Deconnexion</a></li>
 			</ul>
 		</div>
