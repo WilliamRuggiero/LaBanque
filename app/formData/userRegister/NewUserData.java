@@ -30,6 +30,7 @@ public class NewUserData {
     
     @Required
 	public String sex;
+    
     public boolean isAdmin; 
     
     

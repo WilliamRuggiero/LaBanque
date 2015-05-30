@@ -1,4 +1,4 @@
-@(suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
+@(date:String ,suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
 
 @import views.html.main
 @import play.api.mvc.Result
@@ -20,17 +20,34 @@
 				</div>
 				<div class="col-md-8 column">
 					<!-- FORMULAIRE -->
+					@form(controllers.routes.Souscription.addCustomer(), 'class -> "form-horizontal") {
+					<fieldset>
 					
-					@inputRadiobuttonList(suscribeForm("genre"), label="Vous êtes",buttonNameList = List("Homme","Femme"), help="")
+					@inputTextLine(suscribeForm("lastName"), label="Nom de Famille")
+					@inputTextLine(suscribeForm("bornName"), label="Nom de Jeune Fille")
+					@inputTextLine(suscribeForm("familySituation"), label="Situation Familiale")
+					@inputTextLine(suscribeForm("fiscalResidence"), label="Résidence fiscale")
+					@inputTextLineValueDate(suscribeForm("suscribeDate"), date)
+					@inputTextLine(suscribeForm("genre"), label="Vous êtes :")
+					@inputTextLine(suscribeForm("knowTheBank"), label="Comment avez-vous connu la banque")
+					@inputTextLine(suscribeForm("nationality"), label="Nationalité")
+					@inputTextLine(suscribeForm("whereIsBorn"), label="Lieu de naissance")
 					
+					<button id="submit" type="submit" value="Submit" class="btn btn-success"><span class="glyphicon glyphicon-chevron-right"></span>  Prochaine étape</button>
+					<div style="visibility: hidden;">
+					@inputBoolean(suscribeForm("validateByAdmin"), label="Validé ?")
+					</div>
 					
+					</fieldset>
 				</div>
 				<div style="height:65px;"></div>
 				<div class="col-md-2 column">
-					 <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-chevron-right"></span>  Prochaine étape</button>
+					 
+				
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+}
 }
