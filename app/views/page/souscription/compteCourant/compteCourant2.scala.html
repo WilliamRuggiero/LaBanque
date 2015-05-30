@@ -1,0 +1,36 @@
+@(suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
+
+@import views.html.main
+@import play.api.mvc.Result
+@import helper.form
+@import views.html.formTool._
+@import page.souscription._
+
+@main("Souscription au Compte Courant"){
+
+	<div class="col-sm-12" style="height:40px;"></div>
+	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-2 column">
+					<h3>
+						En cas de problème :
+					</h3> <address> <strong>Banquedunet.com</strong><br /> 10, rue de Vanves<br /> Issy les Moulineaux, 92100<br /> <abbr title="Phone">P:</abbr> (+33)1422 267 44</address>
+				</div>
+				<div class="col-md-8 column">
+					<!-- FORMULAIRE -->
+					
+					@inputRadiobuttonList(suscribeForm("genre"), label="Vous êtes",buttonNameList = List("Homme","Femme"), help="")
+					
+					
+				</div>
+				<div style="height:65px;"></div>
+				<div class="col-md-2 column">
+					 <button type="button" class="btn btn-info"><span class="glyphicon glyphicon-chevron-right"></span>  Prochaine étape</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+}
