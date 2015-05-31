@@ -30,12 +30,16 @@
 	@inputPassword(registrationForm("confirmPassword"), label="Confirmation du mot de Passe", id="confirmPassword", placeholder="Entrez à nouveau votre mot de passe")
 	@inputTextLine(registrationForm("sex"), label="Sexe", placeholder="Entrez votre genre")
 	@inputTextHidden(registrationForm("releveIdentiteBancaire"), label="", placeholder="Relevé d'identité bancaire", value="1")
+<<<<<<< HEAD
 	@if(formData.userRegister.NewUserData.validate() != null){
 	  <div class="">
 	            <strong style = "color : #d9534f;">@flash.get("error")</strong>
 	        </div>
 	}
 	@inputTextHidden(registrationForm("releveIdentiteBancaire"), label="", placeholder="Admin?", value="")
+=======
+	@inputTextHidden(registrationForm("isAdmin"), label="", placeholder="Admin?", value="")
+>>>>>>> 253edfc9f0ea3257ca1b8d1fbcd95dd5035576bd
 	</fieldset>
 	<div class="col-sm-7"></div>
 	<div class="col-sm-1">

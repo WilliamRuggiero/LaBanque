@@ -1,0 +1,55 @@
+
+@(date:String ,suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
+
+@import views.html.main
+@import play.api.mvc.Result
+@import helper.form
+@import views.html.formTool._
+@import page.souscription._
+@import java.util.ArrayList
+
+@main("Souscription au Compte Courant"){
+	<div class="col-sm-12" style="height:40px;"></div>
+	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-2 column">
+					<h3>
+						En cas de problème :
+					</h3> <address> <strong>Banquedunet.com</strong><br /> 10, rue de Vanves<br /> Issy les Moulineaux, 92100<br /> <abbr title="Phone">P:</abbr> (+33)1422 267 44</address>
+				</div>
+				<div class="col-md-8 column">
+					<!-- FORMULAIRE -->
+					@form(controllers.routes.Souscription.addCustomer(), 'class -> "form-horizontal") {
+					<fieldset>
+					
+					@inputRadiobuttonList(suscribeForm("genre"), label="Vous êtes",buttonNameList = List("Mâle","Femâle"), help="")
+					@inputTextLine(suscribeForm("lastName"), label="Nom de Famille")
+					@inputTextLine(suscribeForm("bornName"), label="Nom de Jeune Fille")
+					@inputTextLine(suscribeForm("familySituation"), label="Situation Familiale")
+					@inputTextLine(suscribeForm("fiscalResidence"), label="Résidence fiscale")
+					@inputTextLineValueDate(suscribeForm("suscribeDate"), date)
+					@inputTextLine(suscribeForm("genre"), label="Vous êtes :")
+					@inputTextLine(suscribeForm("knowTheBank"), label="Comment avez-vous connu la banque")
+					@inputTextLine(suscribeForm("nationality"), label="Nationalité")
+					@inputTextLine(suscribeForm("whereIsBorn"), label="Lieu de naissance")
+					
+					<button id="submit" type="submit" value="Submit" class="btn btn-success"><span class="glyphicon glyphicon-chevron-right"></span>  Prochaine étape</button>
+					<div style="visibility: hidden;">
+					@inputBoolean(suscribeForm("validateByAdmin"), label="Validé ?")
+					</div>
+					
+					</fieldset>
+				</div>
+				<div style="height:65px;"></div>
+				<div class="col-md-2 column">
+					 
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+}
+}
