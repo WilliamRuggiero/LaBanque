@@ -18,7 +18,7 @@ public class Customer extends Model {
 	public String genre;
 	public String lastName;
 	public String bornName;	
-	public Date birthday;
+	public String suscribeDate;
 	public String nationality;
 	public String whereIsBorn;
 	public String familySituation;
@@ -30,25 +30,25 @@ public class Customer extends Model {
 					String genre, 
 					String lastName, 
 					String bornName, 
-					Date birthday, 
+					String suscribeDate,
 					String nationality, 
 					String whereIsBorn, 
 					String familySituation,
 					String fiscalResidence,
 					String knowTheBank,
-					boolean validateByAdmin) {
+					boolean validateByAdmin
+					) {
 		this.customerId = customerId;
 		this.genre = genre;
 		this.lastName = lastName;
 		this.bornName = bornName;
-		this.birthday = birthday;
+		this.suscribeDate = suscribeDate;
 		this.nationality = nationality;
 		this.whereIsBorn = whereIsBorn;
 		this.familySituation = familySituation;
 		this.fiscalResidence = fiscalResidence;
 		this.knowTheBank = knowTheBank;
-		this.validateByAdmin = validateByAdmin;
-	}
+		this.validateByAdmin = validateByAdmin; }
 	
 	// Cherche un utilisateur avec cet email et ce password
 	//public static Customer login(String email, String password) {
@@ -57,12 +57,12 @@ public class Customer extends Model {
          //   .eq("password", password)
          //   .findUnique();
     //}
-	//Rechercher l'utilisateur avec cet Email
-	// public static Customer findByEmail(String email) {
-      //   return find.where().eq("email", email).findUnique();
-     //}
+	//Rechercher l'utilisateur avec ce bornName
+	public static Customer findByName(String lastName) {
+       return find.where().eq("lastName", lastName).findUnique();
+    }
 	 
-	 //public static int findRowCount(Customer u, String email){
-		// return find.where().eq("email", email).findRowCount();
+	// public static int findRowCount(Customer custom, String bornName){
+	//	 return find.where().eq("bornName", bornName).findRowCount();
 	 //}
 }

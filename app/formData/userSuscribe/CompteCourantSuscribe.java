@@ -1,8 +1,6 @@
 package formData.userSuscribe;
 
 import java.sql.Date;
-
-
 import models.Customer;
 import play.data.validation.Constraints.Required;
 
@@ -16,11 +14,11 @@ public class CompteCourantSuscribe {
     @Required(message = "Ce champ est obligatoire")
     public String lastName;
     
-    @Required(message = "Ce champ est obligatoire")
+    
     public String bornName;
     
     @Required(message = "Ce champ est obligatoire")
-    public Date birthday;
+    public String suscribeDate;
     
     @Required(message = "Ce champ est obligatoire")
     public String nationality;
@@ -40,18 +38,19 @@ public class CompteCourantSuscribe {
     public boolean validateByAdmin;
     
     public Customer buildCustomer(){
-		Customer cust = new Customer (customerId, 
+    	Customer custo = new Customer (
+    			customerId, 
     			genre,
     			lastName,
-    			bornName, 
-    			birthday, 
+    			bornName,
+    			suscribeDate,
     			nationality, 
     			whereIsBorn, 
     			familySituation, 
     			fiscalResidence,
     			knowTheBank, validateByAdmin);
     	
-    	cust.save();
-    	return cust;
+    	custo.save();
+    	return custo;
     }
 }

@@ -8,7 +8,10 @@ create table customer (
   genre                     varchar(255),
   last_name                 varchar(255),
   born_name                 varchar(255),
+
   birthday                  timestamp,
+
+  suscribe_date             varchar(255),
   nationality               varchar(255),
   where_is_born             varchar(255),
   family_situation          varchar(255),

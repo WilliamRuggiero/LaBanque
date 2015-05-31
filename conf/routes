@@ -14,6 +14,7 @@ GET     /userRegister				controllers.Inscription.Inscri()
 GET     /userForget					controllers.Inscription.rappelMotDePasse()
 GET 	/login						controllers.LoginUser.loginUser()
 POST	/newUser					controllers.Inscription.addUser()
+POST	/newCustomer				controllers.Souscription.addCustomer()
 POST	/Profil						controllers.LoginUser.loUser()
 GET 	/Profil						controllers.Profil.profilUser()
 
