@@ -17,22 +17,27 @@
 	@inputTypeEmail(registrationForm("email"), label="Mail", placeholder="Entrez votre email")
 	<div class= "col-sm-4"></div>
 	<div class = "col-sm-4">
-	@if(flash.containsKey("error")) {
+		@if(flash.containsKey("error")) {
 	        <div class="">
-	            <strong style = "color : #d9534f;">@flash.get("error")</strong>
+	        	<strong style = "color : #d9534f;">@flash.get("error")</strong>
 	        </div>
-	    }
+		}
 	</div>
 	<div class= "col-sm-4"></div>
 	<div class="row"></div>
 	@inputTelephone(registrationForm("telephone"), label="Telephone", placeholder="Entrez votre Téléphone")
 	@inputPassword(registrationForm("password"), label="Mot de Passe", id="password", placeholder="Entrez votre mot de passe")
-	@inputPassword(registrationForm("confirmPassword"), label="Confirmation du mot de Passe", id="confirmPassword", placeholder="Entrez à nouveau votre mot de passe")
-	@if(flash.containsKey("error1")){
-	  <div class="">
-	            <strong style = "color : #d9534f;">@flash.get("error1")</strong>
-	        </div>
-	}  
+	@inputPassword(registrationForm("confirmPassword"), label="Confirmation du mot de Passe", placeholder="Entrez à nouveau votre mot de passe")
+	<div class= "col-sm-4"></div>
+	<div class = "col-sm-4">
+		@if(flash.containsKey("error1")){
+		 	<div class="">
+		    	<strong style = "color : #d9534f;">@flash.get("error1")</strong>
+		    </div>
+		}
+	</div>
+	<div class= "col-sm-4"></div>  
+	<div class="row"></div>
 	@inputTextLine(registrationForm("sex"), label="Sexe", placeholder="Entrez votre genre")
 	@inputTextHidden(registrationForm("releveIdentiteBancaire"), label="", placeholder="Relevé d'identité bancaire", value="1")
 	
