@@ -44,14 +44,8 @@ public class NewUserData {
     	return user;
     }
     
-    public String  validate() {
-        if (isBlank(email)) {
-            return "Email is required";
-        }
-
-        if (isBlank(firstName)) {
-            return "Full name is required";
-        }
+    /*public String  validate() {
+       
 
         if (isBlank(password)) {
             return "Password is required";
@@ -67,7 +61,7 @@ public class NewUserData {
         }
 
         return null;
-    }
+    }*/
 
     private boolean isBlank(String input) {
         return input == null || input.isEmpty() || input.trim().isEmpty();
