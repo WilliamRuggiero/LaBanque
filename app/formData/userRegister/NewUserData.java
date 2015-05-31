@@ -43,27 +43,4 @@ public class NewUserData {
     	user.save();
     	return user;
     }
-    
-    /*public String  validate() {
-       
-
-        if (isBlank(password)) {
-            return "Password is required";
-        }
-
-        if (isBlank(confirmPassword)) {
-            return "Confirm Password is required";
-        }
-
-
-        if (!password.equals(confirmPassword)) {
-            return "Passwords do not match";
-        }
-
-        return null;
-    }*/
-
-    private boolean isBlank(String input) {
-        return input == null || input.isEmpty() || input.trim().isEmpty();
-    }
 }
