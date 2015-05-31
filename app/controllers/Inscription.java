@@ -31,15 +31,18 @@ public class Inscription extends Controller {
     			flash("error", "Cet email existe déjà!");
     			return ok(userRegistration.render(form));
     		}
-    		else if( form.get().confirmPassword != form.get().password ){
-    			flash("error1","Le mot de passe entré est différent");
-    			return ok(userRegistration.render(form));
-    		}
-    		else{
-			NewUserData data = form.get();
-			data.buildUser();
-			User v = User.findByEmail(form.get().email);
-			return ok(confirmInscri.render(v));
+    		else {
+    			if(!form.get().confirmPassword.equals(form.get().password)){
+    		
+	    			flash("error1",form.get().password);
+	    			return ok(userRegistration.render(form));
+    			}
+	    		else{
+					NewUserData data = form.get();
+					data.buildUser();
+					User v = User.findByEmail(form.get().email);
+					return ok(confirmInscri.render(v));
+	    		}
     		}
 		}
 	}
