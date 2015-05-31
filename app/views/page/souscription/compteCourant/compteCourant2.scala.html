@@ -24,7 +24,7 @@
 					@form(controllers.routes.Souscription.addCustomer(), 'class -> "form-horizontal") {
 					<fieldset>
 					
-					@inputRadiobuttonList(suscribeForm("genre"), label="Vous êtes",buttonNameList = list, help="")
+					@inputRadiobuttonList(suscribeForm("genre"), label="Vous êtes",buttonNameList = List("Mâle","Femâle"), help="")
 					@inputTextLine(suscribeForm("lastName"), label="Nom de Famille")
 					@inputTextLine(suscribeForm("bornName"), label="Nom de Jeune Fille")
 					@inputTextLine(suscribeForm("familySituation"), label="Situation Familiale")
