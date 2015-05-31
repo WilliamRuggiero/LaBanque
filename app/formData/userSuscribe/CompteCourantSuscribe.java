@@ -37,8 +37,10 @@ public class CompteCourantSuscribe {
     @Required(message = "Ce champ est obligatoire")
     public String knowTheBank;
     
+    public boolean validateByAdmin;
+    
     public Customer buildCustomer(){
-    	Customer cust = new Customer (customerId, 
+		Customer cust = new Customer (customerId, 
     			genre,
     			lastName,
     			bornName, 
@@ -47,7 +49,7 @@ public class CompteCourantSuscribe {
     			whereIsBorn, 
     			familySituation, 
     			fiscalResidence,
-    			knowTheBank);
+    			knowTheBank, validateByAdmin);
     	
     	cust.save();
     	return cust;

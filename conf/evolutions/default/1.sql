@@ -8,12 +8,13 @@ create table customer (
   genre                     varchar(255),
   last_name                 varchar(255),
   born_name                 varchar(255),
-  birthday                  date,
+  birthday                  timestamp,
   nationality               varchar(255),
   where_is_born             varchar(255),
   family_situation          varchar(255),
   fiscal_residence          varchar(255),
   know_the_bank             varchar(255),
+  validate_by_admin         boolean,
   constraint pk_customer primary key (customer_id))
 ;
 

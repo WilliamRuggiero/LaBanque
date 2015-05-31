@@ -1,13 +1,13 @@
-@(suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
+@(suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe], list : List[String])
 
 @import views.html.main
 @import play.api.mvc.Result
 @import helper.form
 @import views.html.formTool._
 @import page.souscription._
+@import java.util.ArrayList
 
 @main("Souscription au Compte Courant"){
-
 	<div class="col-sm-12" style="height:40px;"></div>
 	<div class="container">
 	<div class="row clearfix">
@@ -21,7 +21,7 @@
 				<div class="col-md-8 column">
 					<!-- FORMULAIRE -->
 					
-					@inputRadiobuttonList(suscribeForm("genre"), label="Vous êtes",buttonNameList = List("Homme","Femme"), help="")
+					@inputRadiobuttonList(suscribeForm("genre"), label="Vous êtes",buttonNameList = list, help="")
 					
 					
 				</div>
