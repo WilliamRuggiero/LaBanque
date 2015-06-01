@@ -5,11 +5,8 @@ import formData.userRegister.NewUserData;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.*;
 import views.html.page.login.*;
-import views.html.page.backEnd.register.registerUser;
 import views.html.page.inscription.*;
-import views.html.form.*;
 
 public class Inscription extends Controller {
 
@@ -34,11 +31,18 @@ public class Inscription extends Controller {
     			flash("error", "Cet email existe déjà!");
     			return ok(userRegistration.render(form));
     		}
-    		else{
-			NewUserData data = form.get();
-			data.buildUser();
-			User v = User.findByEmail(form.get().email);
-			return ok(confirmInscri.render(v));
+    		else {
+    			if(!form.get().confirmPassword.equals(form.get().password)){
+    		
+	    			flash("error1","Les mots de passe ne correpondent pas");
+	    			return ok(userRegistration.render(form));
+    			}
+	    		else{
+					NewUserData data = form.get();
+					data.buildUser();
+					User v = User.findByEmail(form.get().email);
+					return ok(confirmInscri.render(v));
+	    		}
     		}
 		}
 	}

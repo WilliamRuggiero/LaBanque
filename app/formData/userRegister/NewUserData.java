@@ -26,6 +26,10 @@ public class NewUserData {
 	public String password;
     
     @Required(message = "Ce champ est obligatoire")
+    @Constraints.MinLength(value =6, message="Veuillez entrer au moins 6 caractères") //message = "Ce champ demande au minimum 6 caractères")
+	public String confirmPassword;
+    
+    @Required(message = "Ce champ est obligatoire")
 	public String releveIdentiteBancaire;
     
     @Required

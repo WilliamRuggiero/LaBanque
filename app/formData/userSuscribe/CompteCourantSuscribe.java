@@ -37,7 +37,6 @@ public class CompteCourantSuscribe {
     
     public boolean validateByAdmin;
     
-    
     public Customer buildCustomer(){
     	Customer custo = new Customer (
     			customerId, 
@@ -49,9 +48,7 @@ public class CompteCourantSuscribe {
     			whereIsBorn, 
     			familySituation, 
     			fiscalResidence,
-    			knowTheBank,
-    			validateByAdmin
-    			);
+    			knowTheBank, validateByAdmin);
     	
     	custo.save();
     	return custo;

@@ -1,18 +1,21 @@
 package controllers;
 
 import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
-import models.Customer;
 import formData.userSuscribe.CompteCourantSuscribe;
 import play.data.Form;
-import play.mvc.Controller;
 import play.mvc.Result;
+import play.mvc.Controller;
+import play.mvc.Security;
+import views.html.page.souscription.compteCourant.*;
+import java.util.Date;
+import java.util.List;
+import models.Customer;
 import views.html.page.souscription.compteCourant.compteCourant1;
 import views.html.page.souscription.compteCourant.compteCourant2;
 import views.html.page.souscription.compteCourant.compteCourant3;
 
+@Security.Authenticated(SecuriteUser.class)
 public class Souscription extends Controller{
 
 	public static Result compteCourant1() {
@@ -20,8 +23,6 @@ public class Souscription extends Controller{
 	}
 	
 	public static Result compteCourant2() {
-		
-		
 		CompteCourantSuscribe formData = new CompteCourantSuscribe();
 
 		Form<CompteCourantSuscribe> form = Form.form(CompteCourantSuscribe.class).fill(formData);

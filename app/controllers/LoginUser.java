@@ -29,11 +29,9 @@ public class LoginUser extends Controller {
 	    	if(form.hasErrors()) {
 	    		flash("error", "Erreur d'identifiant ou de mot de passe");
 	    		return badRequest(userLogin.render(form));
-	    		//return ok(loginAdmin.render(form));
 	    	} 
 	    	else {
 	    		User u = User.findByEmail(form.get().email);
-	    		Integer rowCount = u.find.where().eq("email", form.get().email).findRowCount(); 
 	    		if(u.isAdmin == true){
 	    			flash("error", "Vous êtes administrateur");
 	        		return badRequest(userLogin.render(form));
