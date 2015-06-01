@@ -27,7 +27,6 @@
 					@inputTextLine(suscribeForm("bornName"), label="Nom de Jeune Fille")
 					@inputTextLine(suscribeForm("familySituation"), label="Situation Familiale")
 					@inputTextLine(suscribeForm("fiscalResidence"), label="Résidence fiscale")
-					@inputTextLineValueDate(suscribeForm("suscribeDate"), date)
 					@inputTextLine(suscribeForm("genre"), label="Vous êtes :")
 					@inputTextLine(suscribeForm("knowTheBank"), label="Comment avez-vous connu la banque")
 					@inputTextLine(suscribeForm("nationality"), label="Nationalité")
@@ -35,6 +34,7 @@
 					
 					<button id="submit" type="submit" value="Submit" class="btn btn-success"><span class="glyphicon glyphicon-chevron-right"></span>  Prochaine étape</button>
 					<div style="visibility: hidden;">
+					@inputTextLineValueDate(suscribeForm("suscribeDate"), date)
 					@inputBoolean(suscribeForm("validateByAdmin"), label="Validé ?")
 					</div>
 					

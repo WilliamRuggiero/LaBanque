@@ -1,16 +1,14 @@
 package controllers;
 
 import java.util.ArrayList;
-import views.html.page.login.*;
 import java.util.List;
 
-import formData.userLogin.UserLogin;
 import models.User;
-import play.data.Form;
+
 import play.mvc.Controller;
 import play.mvc.Result;
-import views.html.*;
-import views.html.page.indexContent.*;
+import views.html.page.indexContent.index;
+
 
 public class Application extends Controller {
 
@@ -33,7 +31,7 @@ public class Application extends Controller {
     	}
          return ok(str);
     }
-    
+
    
     
     
