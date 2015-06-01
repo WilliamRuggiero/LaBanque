@@ -2,7 +2,6 @@ package controllers;
 
 import java.util.ArrayList;
 import java.util.List;
-<<<<<<< HEAD
 
 import models.User;
 
@@ -10,12 +9,7 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.page.indexContent.index;
 
-=======
-import models.User;
-import play.mvc.Controller;
-import play.mvc.Result;
 import views.html.page.indexContent.*;
->>>>>>> c84e6db37793a6a628f03f0f82d715fa023f7f9a
 
 public class Application extends Controller {
 

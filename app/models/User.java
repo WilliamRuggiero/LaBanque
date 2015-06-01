@@ -47,6 +47,7 @@ public class User extends Model {
          return find.where().eq("email", email).findUnique();
      }
 	 
+	 
 	 public static int findRowCount(User u, String email){
 		 return find.where().eq("email", email).findRowCount();
 	 }

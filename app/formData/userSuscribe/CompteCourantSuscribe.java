@@ -7,6 +7,8 @@ import play.data.validation.Constraints.Required;
 public class CompteCourantSuscribe {
     
     public Long customerId;
+    
+    public Long userId;
 
     @Required(message = "Ce champ est obligatoire")
     public String genre;
@@ -40,6 +42,7 @@ public class CompteCourantSuscribe {
     public Customer buildCustomer(){
     	Customer custo = new Customer (
     			customerId, 
+    			userId,
     			genre,
     			lastName,
     			bornName,

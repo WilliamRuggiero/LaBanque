@@ -4,8 +4,10 @@ import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 
 import play.db.ebean.Model;
+import models.User;
 
 @Entity
 public class Customer extends Model {
@@ -14,6 +16,9 @@ public class Customer extends Model {
 	
 	@Id
 	public Long customerId;
+	
+	@JoinColumn(name = "userId")
+	public Long userId;
 	
 	public String genre;
 	public String lastName;
@@ -27,6 +32,7 @@ public class Customer extends Model {
 	public boolean validateByAdmin;
 	
 	public Customer(Long customerId,
+					Long userId,
 					String genre, 
 					String lastName, 
 					String bornName, 
@@ -39,6 +45,7 @@ public class Customer extends Model {
 					boolean validateByAdmin
 					) {
 		this.customerId = customerId;
+		this.userId = userId;
 		this.genre = genre;
 		this.lastName = lastName;
 		this.bornName = bornName;

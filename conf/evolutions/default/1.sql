@@ -5,6 +5,7 @@
 
 create table customer (
   customer_id               bigint not null,
+  user_id                   bigint,
   genre                     varchar(255),
   last_name                 varchar(255),
   born_name                 varchar(255),

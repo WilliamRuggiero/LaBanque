@@ -1,5 +1,5 @@
 
-@(date:String ,suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
+@(userIdString:String, date:String ,suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
 
 @import views.html.main
 @import play.api.mvc.Result
@@ -32,9 +32,11 @@
 					@inputTextLine(suscribeForm("knowTheBank"), label="Comment avez-vous connu la banque")
 					@inputTextLine(suscribeForm("nationality"), label="Nationalité")
 					@inputTextLine(suscribeForm("whereIsBorn"), label="Lieu de naissance")
-					
+					@inputTextLineValueDate(suscribeForm("userId"), userIdString)
 					<button id="submit" type="submit" value="Submit" class="btn btn-success"><span class="glyphicon glyphicon-chevron-right"></span>  Prochaine étape</button>
 					<div style="visibility: hidden;">
+					@userIdString
+					@inputTextLineValueDate(suscribeForm("userId"), userIdString)
 					@inputTextLineValueDate(suscribeForm("suscribeDate"), date)
 					@inputBoolean(suscribeForm("validateByAdmin"), label="Validé ?")
 					</div>

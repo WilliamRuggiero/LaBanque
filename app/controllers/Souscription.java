@@ -11,11 +11,13 @@ import views.html.page.souscription.compteCourant.*;
 import java.util.Date;
 import java.util.List;
 import models.Customer;
+import models.User;
 import views.html.page.souscription.compteCourant.compteCourant1;
 import views.html.page.souscription.compteCourant.compteCourant2;
 import views.html.page.souscription.compteCourant.compteCourant3;
 
 @Security.Authenticated(SecuriteUser.class)
+
 public class Souscription extends Controller{
 
 	public static Result compteCourant1() {
@@ -23,6 +25,9 @@ public class Souscription extends Controller{
 	}
 	
 	public static Result compteCourant2() {
+		User u = User.findByEmail(session().get("email"));
+		String userIdString= u.userId.toString();
+		
 		CompteCourantSuscribe formData = new CompteCourantSuscribe();
 
 		Form<CompteCourantSuscribe> form = Form.form(CompteCourantSuscribe.class).fill(formData);
@@ -30,10 +35,12 @@ public class Souscription extends Controller{
 		// affichage: 
 		String dateString=maDate.toString();
 		System.out.println(maDate.toString()); 
-		return ok(compteCourant2.render(dateString,form));
+		return ok(compteCourant2.render(userIdString,dateString,form));
 	}
 	
 	public static Result addCustomer() {
+		User u = User.findByEmail(session().get("email"));
+		String userIdString= u.userId.toString();
 		Date maDate = new Date(); 
 		// affichage: 
 		String dateString=maDate.toString();
@@ -42,7 +49,7 @@ public class Souscription extends Controller{
 		Form<CompteCourantSuscribe> form = Form.form(CompteCourantSuscribe.class).bindFromRequest();
 		if(form.hasErrors()) {
 			System.out.println(1);
-			return ok(compteCourant2.render(dateString,form));
+			return ok(compteCourant2.render(userIdString,dateString,form));
 		} 
 		else {
 			Customer custo = Customer.findByName(form.get().lastName);
@@ -51,7 +58,7 @@ public class Souscription extends Controller{
     		if(rowCount != 0){
     			flash("error", "Cet email existe déjà!");
     			System.out.println(2);
-    			return ok(compteCourant2.render(dateString,form));
+    			return ok(compteCourant2.render(userIdString,dateString,form));
     		}
     		else{
     		CompteCourantSuscribe data = form.get();
