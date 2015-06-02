@@ -16,6 +16,10 @@ create table customer (
   fiscal_residence          varchar(255),
   know_the_bank             varchar(255),
   validate_by_admin         boolean,
+  compte_courant_suscribe   boolean,
+  livret_asuscribe          boolean,
+  pelsuscribe               boolean,
+  cartes_suscribe           boolean,
   constraint pk_customer primary key (customer_id))
 ;
 

@@ -1,5 +1,5 @@
 
-@(userIdString:String, date:String ,suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
+@(errorMentionsLegales : String,userName: String, userIdString:String, date:String ,suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
 
 @import views.html.main
 @import play.api.mvc.Result
@@ -11,41 +11,43 @@
 @main("Souscription au Compte Courant"){
 	<div class="col-sm-12" style="height:40px;"></div>
 	<div class="container">
-	<div class="row clearfix">
-		<div class="col-md-12 column">
-			<div class="row clearfix">
-				<div class="col-md-2 column">
+	<div class="row ">
+		<div class="col-md-12 ">
+			<div class="row">
+				<div class="col-md-2 ">
 					<h3>
 						En cas de problème :
 					</h3> <address> <strong>Banquedunet.com</strong><br /> 10, rue de Vanves<br /> Issy les Moulineaux, 92100<br /> <abbr title="Phone">P:</abbr> (+33)1422 267 44</address>
 				</div>
-				<div class="col-md-8 column">
+				<div class="col-md-8">
 					<!-- FORMULAIRE -->
 					@form(controllers.routes.Souscription.addCustomer(), 'class -> "form-horizontal") {
-					<fieldset>
+					@errorMentionsLegales
 					
-					@inputTextLine(suscribeForm("lastName"), label="Nom de Famille")
-					@inputTextLine(suscribeForm("bornName"), label="Nom de Jeune Fille")
-					@inputTextLine(suscribeForm("familySituation"), label="Situation Familiale")
-					@inputTextLine(suscribeForm("fiscalResidence"), label="Résidence fiscale")
-					@inputTextLine(suscribeForm("genre"), label="Vous êtes :")
-					@inputTextLine(suscribeForm("knowTheBank"), label="Comment avez-vous connu la banque")
-					@inputTextLine(suscribeForm("nationality"), label="Nationalité")
-					@inputTextLine(suscribeForm("whereIsBorn"), label="Lieu de naissance")
-					@inputTextLineValueDate(suscribeForm("userId"), userIdString)
-					<button id="submit" type="submit" value="Submit" class="btn btn-success"><span class="glyphicon glyphicon-chevron-right"></span>  Prochaine étape</button>
+					<fieldset>
+					@inputTextLineSous(suscribeForm("genre"), label="Vous êtes :")
+					@inputTextLineSous(suscribeForm("lastName"), label="Nom de Famille")
+					@inputTextLineSous(suscribeForm("bornName"), label="Nom de Jeune Fille")
+					@inputTextLineSous(suscribeForm("familySituation"), label="Situation Familiale")
+					@inputTextLineSous(suscribeForm("fiscalResidence"), label="Résidence fiscale")
+					@inputTextLineSous(suscribeForm("knowTheBank"), label="Comment avez-vous connu la banque")
+					@inputTextLineSous(suscribeForm("nationality"), label="Nationalité")
+					@inputTextLineSous(suscribeForm("whereIsBorn"), label="Lieu de naissance")
+					@inputBoolean(suscribeForm("compteCourantSuscribe"), label="En cochant cette case je confirme que les informations remplies ci dessus sont conformes")
+					
 					<div style="visibility: hidden;">
-					@userIdString
 					@inputTextLineValueDate(suscribeForm("userId"), userIdString)
 					@inputTextLineValueDate(suscribeForm("suscribeDate"), date)
 					@inputBoolean(suscribeForm("validateByAdmin"), label="Validé ?")
+					@inputBoolean(suscribeForm("livretASuscribe"), label="livretA")
+					@inputBoolean(suscribeForm("cartesSuscribe"), label="cartes")
+					@inputBoolean(suscribeForm("PELSuscribe"), label="PEL")
 					</div>
-					
 					</fieldset>
 				</div>
-				<div style="height:65px;"></div>
-				<div class="col-md-2 column">
-					 
+				<div style="height:28px;"></div>
+				<div class="col-md-2">
+					 <button id="submit" type="submit" value="Submit" class="btn btn-success"><span class="glyphicon glyphicon-chevron-right"></span>  Prochaine étape</button>
 				
 				</div>
 			</div>

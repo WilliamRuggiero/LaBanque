@@ -27,6 +27,8 @@ public class Souscription extends Controller{
 	public static Result compteCourant2() {
 		User u = User.findByEmail(session().get("email"));
 		String userIdString= u.userId.toString();
+		String userName = u.lastName.toString();
+		String errorMentionsLegales = "";
 		
 		CompteCourantSuscribe formData = new CompteCourantSuscribe();
 
@@ -35,21 +37,32 @@ public class Souscription extends Controller{
 		// affichage: 
 		String dateString=maDate.toString();
 		System.out.println(maDate.toString()); 
-		return ok(compteCourant2.render(userIdString,dateString,form));
+		return ok(compteCourant2.render(errorMentionsLegales,userName,userIdString,dateString,form));
 	}
 	
 	public static Result addCustomer() {
 		User u = User.findByEmail(session().get("email"));
 		String userIdString= u.userId.toString();
+		String userName = u.lastName.toString();
+		String errorMentionsLegales = "tata";
+		
 		Date maDate = new Date(); 
 		// affichage: 
 		String dateString=maDate.toString();
 		System.out.println(dateString); 
 			
 		Form<CompteCourantSuscribe> form = Form.form(CompteCourantSuscribe.class).bindFromRequest();
-		if(form.hasErrors()) {
+		
+		
+		if(form.hasErrors() || form.get().compteCourantSuscribe==false) {
+			if(form.get().compteCourantSuscribe==false){
+				return ok(compteCourant2.render(errorMentionsLegales,userName,userIdString,dateString,form));
+			}
+			else
+			{	
 			System.out.println(1);
-			return ok(compteCourant2.render(userIdString,dateString,form));
+			return ok(compteCourant2.render(errorMentionsLegales,userName,userIdString,dateString,form));
+			}
 		} 
 		else {
 			Customer custo = Customer.findByName(form.get().lastName);
@@ -58,7 +71,7 @@ public class Souscription extends Controller{
     		if(rowCount != 0){
     			flash("error", "Cet email existe déjà!");
     			System.out.println(2);
-    			return ok(compteCourant2.render(userIdString,dateString,form));
+    			return ok(compteCourant2.render(errorMentionsLegales,userName,userIdString,dateString,form));
     		}
     		else{
     		CompteCourantSuscribe data = form.get();

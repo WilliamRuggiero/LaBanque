@@ -29,10 +29,18 @@ public class Customer extends Model {
 	public String familySituation;
 	public String fiscalResidence;
 	public String knowTheBank;
+	
 	public boolean validateByAdmin;
+	
+	public boolean compteCourantSuscribe;
+	public boolean livretASuscribe;
+	public boolean PELSuscribe;
+	public boolean cartesSuscribe;
+	
 	
 	public Customer(Long customerId,
 					Long userId,
+					
 					String genre, 
 					String lastName, 
 					String bornName, 
@@ -42,7 +50,13 @@ public class Customer extends Model {
 					String familySituation,
 					String fiscalResidence,
 					String knowTheBank,
-					boolean validateByAdmin
+					
+					boolean validateByAdmin,
+					
+					boolean compteCourantSuscribe,
+					boolean livretASuscribe,
+					boolean PELSuscribe,
+					boolean cartesSuscribe
 					) {
 		this.customerId = customerId;
 		this.userId = userId;
@@ -55,7 +69,12 @@ public class Customer extends Model {
 		this.familySituation = familySituation;
 		this.fiscalResidence = fiscalResidence;
 		this.knowTheBank = knowTheBank;
-		this.validateByAdmin = validateByAdmin; }
+		this.validateByAdmin = validateByAdmin;
+		this.compteCourantSuscribe = compteCourantSuscribe;
+		this.livretASuscribe = livretASuscribe;
+		this.PELSuscribe = PELSuscribe;
+		this.cartesSuscribe = cartesSuscribe;
+	}
 	
 	// Cherche un utilisateur avec cet email et ce password
 	//public static Customer login(String email, String password) {

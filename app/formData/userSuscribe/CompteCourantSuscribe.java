@@ -39,6 +39,11 @@ public class CompteCourantSuscribe {
     
     public boolean validateByAdmin;
     
+    public boolean compteCourantSuscribe;
+    public boolean livretASuscribe;
+    public boolean PELSuscribe;
+    public boolean cartesSuscribe;
+   
     public Customer buildCustomer(){
     	Customer custo = new Customer (
     			customerId, 
@@ -51,7 +56,13 @@ public class CompteCourantSuscribe {
     			whereIsBorn, 
     			familySituation, 
     			fiscalResidence,
-    			knowTheBank, validateByAdmin);
+    			knowTheBank, 
+    			validateByAdmin,
+    			compteCourantSuscribe,
+    			livretASuscribe,
+    			PELSuscribe,
+    			cartesSuscribe
+    			);
     	
     	custo.save();
     	return custo;
