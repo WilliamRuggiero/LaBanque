@@ -27,11 +27,11 @@
 	<div class= "col-sm-4"></div>
 	<div class="row"></div>
 	@inputTelephone(registrationForm("telephone"), label="Telephone", placeholder="Téléphone")
-	@inputPassword(registrationForm("password"), label="Mot de Passe", id="password", placeholder="mot de passe")
+	@inputTextHidden(registrationForm("passwordHash"), label="Mot de Passe", placeholder="mot de passe", value = "1")
 	@inputTextLine(registrationForm("releveIdentiteBancaire"), label="RIB", placeholder="Relevé d'identité bancaire")
 	@inputTextLine(registrationForm("sex"), label="Sexe", placeholder="Genre")
 	@inputBoolean(registrationForm("isAdmin"), label="Administrateur :")
-
+	@inputTextHidden(registrationForm("confirmPassword"), label="Confirmation du mot de Passe", placeholder="Entrez à nouveau votre mot de passe", value = "1" )
 
 	</fieldset>
 	<div class="col-sm-7"></div>

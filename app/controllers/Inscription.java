@@ -32,7 +32,8 @@ public class Inscription extends Controller {
     			return ok(userRegistration.render(form));
     		}
     		else {
-    			if(!form.get().confirmPassword.equals(form.get().password)){
+    			
+    			if(!form.get().confirmPassword.equals(form.get().passwordHash)){
     		
 	    			flash("error1","Les mots de passe ne correpondent pas");
 	    			return ok(userRegistration.render(form));

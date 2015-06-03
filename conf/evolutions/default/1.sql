@@ -29,7 +29,7 @@ create table user (
   last_name                 varchar(255),
   email                     varchar(255),
   telephone                 varchar(255),
-  password                  varchar(255),
+  password_hash             varchar(255),
   releve_identite_bancaire  varchar(255),
   sex                       varchar(255),
   is_admin                  boolean,

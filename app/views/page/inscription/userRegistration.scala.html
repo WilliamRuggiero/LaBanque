@@ -26,7 +26,7 @@
 	<div class= "col-sm-4"></div>
 	<div class="row"></div>
 	@inputTelephone(registrationForm("telephone"), label="Telephone", placeholder="Entrez votre Téléphone")
-	@inputPassword(registrationForm("password"), label="Mot de Passe", id="password", placeholder="Entrez votre mot de passe")
+	@inputPassword(registrationForm("passwordHash"), label="Mot de Passe", id="password", placeholder="Entrez votre mot de passe")
 	@inputPassword(registrationForm("confirmPassword"), label="Confirmation du mot de Passe", placeholder="Entrez à nouveau votre mot de passe")
 	<div class= "col-sm-4"></div>
 	<div class = "col-sm-4">
@@ -40,12 +40,12 @@
 	<div class="row"></div>
 	@inputTextLine(registrationForm("sex"), label="Sexe", placeholder="Entrez votre genre")
 	@inputTextHidden(registrationForm("releveIdentiteBancaire"), label="", placeholder="Relevé d'identité bancaire", value="1")
-<<<<<<< HEAD
+
 	@inputTextHidden(registrationForm("isAdmin"), label="", placeholder="Admin?", value="false")
-=======
+
 	
-	@inputTextHidden(registrationForm("releveIdentiteBancaire"), label="", placeholder="Admin?", value="")
->>>>>>> c84e6db37793a6a628f03f0f82d715fa023f7f9a
+	
+
 	</fieldset>
 	<div class="col-sm-7"></div>
 	<div class="col-sm-1">

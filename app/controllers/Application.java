@@ -27,7 +27,7 @@ public class Application extends Controller {
     	String str = "";
     	    
     	for(User u : userList) {
-    		str += u.lastName+" "+u.firstName+" "+u.email+" "+u.password+" "+u.telephone+" "+u.releveIdentiteBancaire+" "+u.sex;
+    		str += u.lastName+" "+u.firstName+" "+u.email+" "+u.passwordHash+" "+u.telephone+" "+u.releveIdentiteBancaire+" "+u.sex;
     		str += "\n";
     	}
          return ok(str);
