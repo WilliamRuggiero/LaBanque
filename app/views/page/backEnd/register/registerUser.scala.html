@@ -1,4 +1,4 @@
-@(registrationForm: Form[formData.userRegister.NewUserData], user : User)
+@(registrationForm: Form[formData.userRegister.NewUserData], user : User, list : List[String])
 
 @import views.html.main
 @import play.api.mvc.Result
@@ -27,11 +27,14 @@
 	<div class= "col-sm-4"></div>
 	<div class="row"></div>
 	@inputTelephone(registrationForm("telephone"), label="Telephone", placeholder="Téléphone")
-	@inputTextHidden(registrationForm("passwordHash"), label="Mot de Passe", placeholder="mot de passe", value = "1")
+	
 	@inputTextLine(registrationForm("releveIdentiteBancaire"), label="RIB", placeholder="Relevé d'identité bancaire")
-	@inputTextLine(registrationForm("sex"), label="Sexe", placeholder="Genre")
+	<div class="col-sm-1"></div>
+	@inputRadiobuttonList(registrationForm("sex"), label= "Sexe", buttonNameList = list)
+	<div class="col-sm-12"></div>
 	@inputBoolean(registrationForm("isAdmin"), label="Administrateur :")
-	@inputTextHidden(registrationForm("confirmPassword"), label="Confirmation du mot de Passe", placeholder="Entrez à nouveau votre mot de passe", value = "1" )
+	@inputTextHidden(registrationForm("passwordHash"), placeholder="mot de passe", value = "123456")
+	@inputTextHidden(registrationForm("confirmPassword"), placeholder="Entrez à nouveau votre mot de passe", value = "123456" )
 
 	</fieldset>
 	<div class="col-sm-7"></div>

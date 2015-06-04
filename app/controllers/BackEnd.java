@@ -1,5 +1,7 @@
 package controllers;
 
+import java.util.ArrayList;
+
 import models.User;
 import play.mvc.*;
 import play.data.Form;
@@ -14,18 +16,24 @@ import views.html.page.backEnd.userManager.*;
 public class BackEnd extends Controller {
 
 	public static Result userPost(){
+		ArrayList <String> list = new ArrayList<String>();
+		list.add("Mâle");
+		list.add("Femelle");
 		NewUserData formData = new NewUserData();
 
 		Form<NewUserData> form = Form.form(NewUserData.class).fill(formData);
-        return ok(registerUser.render(form, User.findByEmail(session().get("email"))));  
+        return ok(registerUser.render(form, User.findByEmail(session().get("email")),list));  
 	}
 	
 	
  	public static Result userPostPost() {
+ 		ArrayList <String> list = new ArrayList<String>();
+		list.add("Mâle");
+		list.add("Femelle");
     	Form<NewUserData> form = Form.form(NewUserData.class).bindFromRequest();
     	
     	if(form.hasErrors()) {
-    		return ok(registerUser.render(form, User.findByEmail(session().get("email"))));
+    		return ok(registerUser.render(form, User.findByEmail(session().get("email")),list));
     	} 
     	else {
     		User u = User.findByEmail(form.get().email);
@@ -33,7 +41,7 @@ public class BackEnd extends Controller {
     		Integer rowCount = u.find.where().eq("email", form.get().email).findRowCount(); 
     		if(rowCount != 0){
     			flash("error", "Cet email existe déjà!");
-    			return ok(registerUser.render(form, User.findByEmail(session().get("email"))));
+    			return ok(registerUser.render(form, User.findByEmail(session().get("email")),list));
     		}
     		else{
 	        	NewUserData data = form.get();

@@ -1,4 +1,4 @@
-@(registrationForm: Form[formData.userRegister.NewUserData])
+@(registrationForm: Form[formData.userRegister.NewUserData], list : List[String])
 
 @import views.html.main
 @import play.api.mvc.Result
@@ -38,7 +38,8 @@
 	</div>
 	<div class= "col-sm-4"></div>  
 	<div class="row"></div>
-	@inputTextLine(registrationForm("sex"), label="Sexe", placeholder="Entrez votre genre")
+	<div class= "col-sm-1"></div>
+	@inputRadiobuttonList(registrationForm("sex"), label= "Sexe", buttonNameList = list)
 	@inputTextHidden(registrationForm("releveIdentiteBancaire"), label="", placeholder="Relevé d'identité bancaire", value="1")
 
 	@inputTextHidden(registrationForm("isAdmin"), label="", placeholder="Admin?", value="false")

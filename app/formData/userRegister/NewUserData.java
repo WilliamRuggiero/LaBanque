@@ -35,7 +35,7 @@ public class NewUserData {
     @Required(message = "Ce champ est obligatoire")
 	public String releveIdentiteBancaire;
     
-    @Required
+    @Required(message = "Ce champ est obligatoire")
 	public String sex;
     
     public boolean isAdmin; 
