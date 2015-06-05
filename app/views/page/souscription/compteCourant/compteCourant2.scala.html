@@ -1,5 +1,12 @@
 
-@(list : List[String], errorMentionsLegales : String,userName: String, userIdString:String, date:String ,suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
+@(listResidenceFiscale : List[String],
+listSituation : List[String], 
+list : List[String], 
+errorMentionsLegales : String,
+userName: String, 
+userIdString:String, 
+date:String ,
+suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
 
 @import views.html.main
 @import play.api.mvc.Result
@@ -44,10 +51,10 @@
 					</h5>
 					<fieldset>
 					@inputRadiobuttonListSous(suscribeForm("genre"), label= "Genre", buttonNameList = list)
-					@inputTextLineSous(suscribeForm("lastName"), label="Nom de Famille")
+					@inputTextLineSous(suscribeForm("lastName"), label="Nom de Famille*")
 					@inputTextLineSous(suscribeForm("bornName"), label="Nom de Jeune Fille")
-					@inputTextLineSous(suscribeForm("familySituation"), label="Situation Familiale")
-					@inputTextLineSous(suscribeForm("fiscalResidence"), label="Résidence fiscale")
+					@inputRadiobuttonListSous(suscribeForm("familySituation"), label= "Situation Familiale", buttonNameList = listSituation)
+					@inputRadiobuttonListSous(suscribeForm("fiscalResidence"), label= "Résidence Fiscale", buttonNameList = listResidenceFiscale)
 					@inputTextLineSous(suscribeForm("knowTheBank"), label="Comment avez-vous connu la banque")
 					@inputTextLineSous(suscribeForm("nationality"), label="Nationalité")
 					@inputTextLineSous(suscribeForm("whereIsBorn"), label="Lieu de naissance")

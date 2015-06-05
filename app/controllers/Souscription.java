@@ -31,6 +31,15 @@ public class Souscription extends Controller{
 		list.add("Homme");
 		list.add("Femme");
 		
+		ArrayList <String> listSituation = new ArrayList<String>();
+		listSituation.add("Célibataire");
+		listSituation.add("Marié");
+		listSituation.add("Veuf");
+		
+		ArrayList <String> listResidenceFiscale = new ArrayList<String>();
+		listResidenceFiscale.add("France");
+		listResidenceFiscale.add("Etranger");
+		
 		User u = User.findByEmail(session().get("email"));
 		String userIdString= u.userId.toString();
 		String userName = u.lastName.toString();
@@ -43,13 +52,22 @@ public class Souscription extends Controller{
 		// affichage: 
 		String dateString=maDate.toString();
 		System.out.println(maDate.toString()); 
-		return ok(compteCourant2.render(list,errorMentionsLegales,userName,userIdString,dateString,form));
+		return ok(compteCourant2.render(listResidenceFiscale,listSituation,list,errorMentionsLegales,userName,userIdString,dateString,form));
 	}
 	
 	public static Result addCustomer() {
 		ArrayList <String> list = new ArrayList<String>();
 		list.add("Homme");
 		list.add("Femme");
+		
+		ArrayList <String> listSituation = new ArrayList<String>();
+		listSituation.add("Célibataire");
+		listSituation.add("Marié");
+		listSituation.add("Veuf");
+		
+		ArrayList <String> listResidenceFiscale = new ArrayList<String>();
+		listResidenceFiscale.add("France");
+		listResidenceFiscale.add("Etranger");
 		
 		User u = User.findByEmail(session().get("email"));
 		String userIdString= u.userId.toString();
@@ -67,12 +85,12 @@ public class Souscription extends Controller{
 		if(form.hasErrors() || form.get().compteCourantSuscribe==false) {
 			
 			if(form.get().compteCourantSuscribe==false){
-				return ok(compteCourant2.render(list,errorMentionsLegales,userName,userIdString,dateString,form));
+				return ok(compteCourant2.render(listResidenceFiscale,listSituation,list,errorMentionsLegales,userName,userIdString,dateString,form));
 			}
 			else
 			{	
 			System.out.println(1);
-			return ok(compteCourant2.render(list,errorMentionsLegales,userName,userIdString,dateString,form));
+			return ok(compteCourant2.render(listResidenceFiscale,listSituation,list,errorMentionsLegales,userName,userIdString,dateString,form));
 			}
 		} 
 		else {
@@ -82,7 +100,7 @@ public class Souscription extends Controller{
     		if(rowCount != 0){
     			flash("error", "Cet email existe déjà!");
     			System.out.println(2);
-    			return ok(compteCourant2.render(list,errorMentionsLegales,userName,userIdString,dateString,form));
+    			return ok(compteCourant2.render(listResidenceFiscale,listSituation,list,errorMentionsLegales,userName,userIdString,dateString,form));
     		}
     		else{
     		CompteCourantSuscribe data = form.get();
