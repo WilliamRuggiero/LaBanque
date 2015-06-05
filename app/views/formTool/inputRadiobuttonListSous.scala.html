@@ -1,8 +1,8 @@
 @(field: Field, label: String = "CHANGEME", buttonNameList: List[String], help: String = "")
 
   <div class="form-group @if(field.hasErrors) {has-error}">
-    <label class="col-sm-2 control-label" for="@field.id">@label</label>
-    <div id="@(field.id + "s")" class="col-sm-4" >
+    <label style="text-align:left;" class="col-sm-12 control-label" for="@field.id">@label</label>
+    <div id="@(field.id + "s")" class="col-sm-8" >
       @for(buttonName <- buttonNameList) {
       <label class="radio-inline">
         <input

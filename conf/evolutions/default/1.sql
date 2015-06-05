@@ -3,7 +3,7 @@
 
 # --- !Ups
 
-create table customer (
+create table customer_compte_courant (
   customer_id               bigint not null,
   user_id                   bigint,
   genre                     varchar(255),
@@ -20,7 +20,7 @@ create table customer (
   livret_asuscribe          boolean,
   pelsuscribe               boolean,
   cartes_suscribe           boolean,
-  constraint pk_customer primary key (customer_id))
+  constraint pk_customer_compte_courant primary key (customer_id))
 ;
 
 create table user (
@@ -36,7 +36,7 @@ create table user (
   constraint pk_user primary key (user_id))
 ;
 
-create sequence customer_seq;
+create sequence customer_compte_courant_seq;
 
 create sequence user_seq;
 
@@ -47,13 +47,13 @@ create sequence user_seq;
 
 SET REFERENTIAL_INTEGRITY FALSE;
 
-drop table if exists customer;
+drop table if exists customer_compte_courant;
 
 drop table if exists user;
 
 SET REFERENTIAL_INTEGRITY TRUE;
 
-drop sequence if exists customer_seq;
+drop sequence if exists customer_compte_courant_seq;
 
 drop sequence if exists user_seq;
 

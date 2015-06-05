@@ -10,9 +10,9 @@ import play.db.ebean.Model;
 import models.User;
 
 @Entity
-public class Customer extends Model {
+public class CustomerCompteCourant extends Model {
 	
-	public static Finder<Long,Customer> find = new Finder<Long,Customer>(Long.class, Customer.class);
+	public static Finder<Long,CustomerCompteCourant> find = new Finder<Long,CustomerCompteCourant>(Long.class, CustomerCompteCourant.class);
 	
 	@Id
 	public Long customerId;
@@ -38,7 +38,8 @@ public class Customer extends Model {
 	public boolean cartesSuscribe;
 	
 	
-	public Customer(Long customerId,
+	public CustomerCompteCourant
+					(Long customerId,
 					Long userId,
 					
 					String genre, 
@@ -84,7 +85,7 @@ public class Customer extends Model {
          //   .findUnique();
     //}
 	//Rechercher l'utilisateur avec ce bornName
-	public static Customer findByName(String lastName) {
+	public static CustomerCompteCourant findByName(String lastName) {
        return find.where().eq("lastName", lastName).findUnique();
     }
 	 
