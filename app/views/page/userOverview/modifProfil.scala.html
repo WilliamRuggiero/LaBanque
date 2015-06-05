@@ -1,19 +1,17 @@
-@(registrationForm: Form[formData.userRegister.NewUserData], list : List[String])
+@(registrationForm: Form[formData.userRegister.NewUserData], user : User)
 
 @import views.html.main
 @import play.api.mvc.Result
 @import helper.form
 @import views.html.formTool._
-@import page.inscription._
+@import page.userOverview._
 
-@main("Créez votre compte"){
+@main("Modifier votre pofil"){
 	<div class="container">
-	@form(controllers.routes.Inscription.addUser(), 'class -> "form-horizontal") {
+	@form(controllers.routes.Profil.modifProfil(), 'class -> "form-horizontal") {
 	<fieldset>
 	<div class="col-sm-12 visible-xs" style="height:60px;">
 	</div>
-	@inputTextLine(registrationForm("firstName"), label="Prénom*", placeholder="Entrez votre prénom")
-	@inputTextLine(registrationForm("lastName"), label="Nom*", placeholder="Entrez votre Nom")
 	@inputTypeEmail(registrationForm("email"), label="Mail*", placeholder="Entrez votre email")
 	<div class= "col-sm-4"></div>
 	<div class = "col-sm-4">
@@ -39,18 +37,15 @@
 	<div class= "col-sm-4"></div>  
 	<div class="row"></div>
 	<div class= "col-sm-1"></div>
-	@inputRadiobuttonList(registrationForm("sex"), label= "Sexe*", buttonNameList = list)
-	@inputTextHidden(registrationForm("releveIdentiteBancaire"), label="", placeholder="Relevé d'identité bancaire", value="1")
-
-	@inputTextHidden(registrationForm("isAdmin"), label="", placeholder="Admin?", value="false")
-
-	
-	
-
+	@inputTextHidden(registrationForm("isAdmin"), label="", placeholder="", value="false")
+	@inputTextHidden(registrationForm("firstName"), label="", placeholder="", value = user.firstName)
+	@inputTextHidden(registrationForm("lastName"), label="", placeholder="", value =  user.lastName)
+	@inputTextHidden(registrationForm("releveIdentiteBancaire"), label="", placeholder="Relevé d'identité bancaire", value= user.releveIdentiteBancaire)
+	@inputTextHidden(registrationForm("sex"), label= "", placeholder="", value = user.sex)
 	</fieldset>
 	<div class="col-sm-7"></div>
 	<div class="col-sm-1">
-	<button id="submit" type="submit" value="Submit" class="btn btn-success">S'inscrire
+	<button id="submit" type="submit" value="Submit" class="btn btn-success">Modifier
 	</button>
 	</div>
 }

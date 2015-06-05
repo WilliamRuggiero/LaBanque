@@ -18,6 +18,8 @@ POST	/newCustomer				controllers.Souscription.addCustomer()
 POST	/Profil						controllers.LoginUser.loUser()
 GET 	/Profil						controllers.Profil.profilUser()
 GET		/login						controllers.LoginUser.logout()
+GET		/modifProfil1				controllers.Profil.formModif()
+POST	/modifProfil2				controllers.Profil.modifProfil()
 
 GET 	/compteCourant1				controllers.Souscription.compteCourant1()
 GET 	/compteCourant2				controllers.Souscription.compteCourant2()
