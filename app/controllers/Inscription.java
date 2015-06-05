@@ -14,8 +14,8 @@ public class Inscription extends Controller {
 	
 	public static Result Inscri() {
 		ArrayList <String> list = new ArrayList<String>();
-		list.add("Mâle");
-		list.add("Femelle");
+		list.add("Homme");
+		list.add("Femme");
 		NewUserData formData = new NewUserData();
 
 		Form<NewUserData> form = Form.form(NewUserData.class).fill(formData);
@@ -24,8 +24,8 @@ public class Inscription extends Controller {
 
 	public static Result addUser() {
 		ArrayList <String> list = new ArrayList<String>();
-		list.add("Mâle");
-		list.add("Femelle");
+		list.add("Homme");
+		list.add("Femme");
 		Form<NewUserData> form = Form.form(NewUserData.class).bindFromRequest();
 
 		if(form.hasErrors()) {
