@@ -1,13 +1,11 @@
 package models;
 
-import java.util.Date;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 
 import play.db.ebean.Model;
-import models.User;
 
 @Entity
 public class CustomerCompteCourant extends Model {
@@ -37,6 +35,9 @@ public class CustomerCompteCourant extends Model {
 	public boolean PELSuscribe;
 	public boolean cartesSuscribe;
 	
+	@OneToOne 
+	public User user;
+	
 	
 	public CustomerCompteCourant
 					(Long customerId,
@@ -57,7 +58,8 @@ public class CustomerCompteCourant extends Model {
 					boolean compteCourantSuscribe,
 					boolean livretASuscribe,
 					boolean PELSuscribe,
-					boolean cartesSuscribe
+					boolean cartesSuscribe,
+					User user
 					) {
 		this.customerId = customerId;
 		this.userId = userId;
@@ -75,6 +77,7 @@ public class CustomerCompteCourant extends Model {
 		this.livretASuscribe = livretASuscribe;
 		this.PELSuscribe = PELSuscribe;
 		this.cartesSuscribe = cartesSuscribe;
+		this.user = user;
 	}
 	
 	// Cherche un utilisateur avec cet email et ce password
@@ -88,6 +91,11 @@ public class CustomerCompteCourant extends Model {
 	public static CustomerCompteCourant findByName(String lastName) {
        return find.where().eq("lastName", lastName).findUnique();
     }
+	
+	public static boolean findAlreadyAccount(){
+		return find.where().eq("compteCourantSuscribe",true).findUnique() != null;
+	}
+	
 	 
 	// public static int findRowCount(Customer custom, String bornName){
 	//	 return find.where().eq("bornName", bornName).findRowCount();

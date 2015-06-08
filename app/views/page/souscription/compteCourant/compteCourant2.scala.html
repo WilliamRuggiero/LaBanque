@@ -1,5 +1,7 @@
 
-@(listResidenceFiscale : List[String],
+@( 
+returnAlreadyAccount : Boolean,
+listResidenceFiscale : List[String],
 listSituation : List[String], 
 list : List[String], 
 errorMentionsLegales : String,
@@ -14,6 +16,12 @@ suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
 @import views.html.formTool._
 @import page.souscription._
 @import java.util.ArrayList
+
+
+@if(returnAlreadyAccount==true){
+	true
+}else{
+	
 
 @main("Souscription au Compte Courant"){
 	<div class="col-sm-12" style="height:40px;"></div>
@@ -79,5 +87,6 @@ suscribeForm: Form[formData.userSuscribe.CompteCourantSuscribe])
 		</div>
 	</div>
 </div>
+}
 }
 }

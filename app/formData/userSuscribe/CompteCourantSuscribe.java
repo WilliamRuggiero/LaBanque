@@ -1,7 +1,7 @@
 package formData.userSuscribe;
 
-import java.sql.Date;
 import models.CustomerCompteCourant;
+import models.User;
 import play.data.validation.Constraints.Required;
 
 public class CompteCourantSuscribe {
@@ -44,7 +44,7 @@ public class CompteCourantSuscribe {
     public boolean PELSuscribe;
     public boolean cartesSuscribe;
    
-    public CustomerCompteCourant buildCustomer(){
+    public CustomerCompteCourant buildCustomer(User user){
     	CustomerCompteCourant custo = new CustomerCompteCourant (
     			customerId, 
     			userId,
@@ -61,7 +61,8 @@ public class CompteCourantSuscribe {
     			compteCourantSuscribe,
     			livretASuscribe,
     			PELSuscribe,
-    			cartesSuscribe
+    			cartesSuscribe,
+    			user
     			);
     	
     	custo.save();

@@ -22,6 +22,8 @@ public class User extends Model {
 	public String sex;
 	public boolean isAdmin;
 	
+	
+	
 	public User(Long userId,String firstName, String lastName,  String email, String telephone, String passwordHash,  String releveIdentiteBancaire, String sex, boolean isAdmin) {
 		this.userId = userId;
 		this.lastName = lastName;

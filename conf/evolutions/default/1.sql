@@ -20,6 +20,7 @@ create table customer_compte_courant (
   livret_asuscribe          boolean,
   pelsuscribe               boolean,
   cartes_suscribe           boolean,
+  user_user_id              bigint,
   constraint pk_customer_compte_courant primary key (customer_id))
 ;
 
@@ -40,6 +41,8 @@ create sequence customer_compte_courant_seq;
 
 create sequence user_seq;
 
+alter table customer_compte_courant add constraint fk_customer_compte_courant_use_1 foreign key (user_user_id) references user (user_id) on delete restrict on update restrict;
+create index ix_customer_compte_courant_use_1 on customer_compte_courant (user_user_id);
 
 
 
