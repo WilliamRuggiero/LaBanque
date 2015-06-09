@@ -30,7 +30,7 @@ public class Souscription extends Controller{
 		
 		User u = User.findByEmail(session().get("email"));
 		
-		boolean b = CustomerCompteCourant.findAlreadyAccount();
+		boolean b = CustomerCompteCourant.findAlreadyAccount(u.userId);
 		System.out.println(b);
 		
 		
@@ -76,10 +76,12 @@ public class Souscription extends Controller{
 		listResidenceFiscale.add("France");
 		listResidenceFiscale.add("Etranger");
 		
-		boolean b = CustomerCompteCourant.findAlreadyAccount();
+		User u = User.findByEmail(session().get("email"));
+		
+		boolean b = CustomerCompteCourant.findAlreadyAccount(u.userId);
 		System.out.println(b);
 		
-		User u = User.findByEmail(session().get("email"));
+		
 		String userIdString= u.userId.toString();
 		String userName = u.lastName.toString();
 		String errorMentionsLegales = "Merci de cocher la case en fin de formulaire certifiant que les informations sont conformes.";

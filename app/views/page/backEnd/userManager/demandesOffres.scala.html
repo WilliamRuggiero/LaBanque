@@ -1,0 +1,29 @@
+@(users: List[models.CustomerCompteCourant], user: User)
+
+@import views.html.page.backEnd._
+@import views.html.page.backEnd.mainBackEnd
+@import views.html.widget._
+
+@mainBackEnd("Demande d'offres",true){
+
+	<div class="container">
+		<div class="row">
+			<h2 style="visibility: hidden;">tata</h2>
+		</div>
+	</div>
+	
+	@dataTable("userList", scala.collection.immutable.List("Nom","Date de souscription","Nationalité","Lieu de naissance","Residence fiscale","Situation familiale", "Valider"), "Attention ces données peuvent être confidentielles, si vous ne deviez pas être sur cette page, merci de contacter votre administrateur.") {
+		@for(CustomerCompteCourant<-users){
+			<tr>
+				<td style="text-align: center;">@CustomerCompteCourant.lastName</td>
+				<td style="text-align: center;">@CustomerCompteCourant.suscribeDate</td>
+				<td style="text-align: center;">@CustomerCompteCourant.nationality</td>
+				<td style="text-align: center;">@CustomerCompteCourant.whereIsBorn</td>
+				<td style="text-align: center;">@CustomerCompteCourant.fiscalResidence</td>
+				<td style="text-align: center;">@CustomerCompteCourant.familySituation</td>
+				<td style="text-align: center;">@CustomerCompteCourant.validateByAdmin</td>
+			</tr>
+			
+		}
+	}
+}

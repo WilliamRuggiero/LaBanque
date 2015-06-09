@@ -1,7 +1,7 @@
-@(user : User)
+@(user : User, custom : List[models.CustomerCompteCourant])
 @import page.userOverview._
 
 @main("Profil utilisateur"){
-		@profil(user);
+		@profil(user, custom);
 
 }

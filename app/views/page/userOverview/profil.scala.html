@@ -1,51 +1,63 @@
-@(user : User)
+@(user : User, custom : List[models.CustomerCompteCourant])
+
+@import views.html.widget._
+
 	<div class="container">
 		<div class="row">
 			<p></p>
 		</div>
-		<div class="row">
 			<div class="col-sm-2"><img src="@routes.Assets.at("images/avatarHomme.png")" class="img-circle"></div>
-			<div class="col-sm-5">
-				<table>
-					<tr>
-						<th>Historique des actions</th>
-						<th>Etats</th>
-					</tr>
-					<tr>
-						<td>Exemples Demande de LivretA</td>
-						<td>Exemples En attente</td>
-					</tr>
-					<tr>
-						<td>Exemples Demande de PEL</td>
-						<td>Exemples Reffusée</td>
-					</tr>
-					<tr>
-						<td>Exemples Demande de LivretA</td>
-						<td>Exemples En attente</td>
-					</tr>
-				</table>
-			</div>
-			<div class="col-sm-5">
-				<table>
-					<tr>
-						<th>Patrimoine</th>
-						<th>Type</th>
-					</tr>
-					<tr>
-						<td>PEL</td>
-						<td>Exemples En attente</td>
-					</tr>
-					<tr>
-						<td>LivretA</td>
-						<td>Exemples En attente</td>
-					</tr>
-					<tr>
-						<td>Propriétés privés</td>
-						<td>Exemples En attente</td>
-					</tr>
-				</table>
-			</div>
-		</div>
+			
+			@dataTable("userList", scala.collection.immutable.List("Historique des actions", "Etats"), "Voici vos historiques"){
+				@for(User<-custom){
+					@if(User.userId == user.userId){
+						<tr>
+							<td style="text-align: center;">@User.userId</td>
+							<td style="text-align: center;">@User.genre</td>
+						</tr>
+					}
+				}
+			}
+<!-- 			<div class="col-sm-5"> -->
+<!-- 				<table> -->
+<!-- 					<tr> -->
+<!-- 						<th>Historique des actions</th> -->
+<!-- 						<th>Etats</th> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<td>Exemples Demande de LivretA</td> -->
+<!-- 						<td>Exemples En attente</td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<td>Exemples Demande de PEL</td> -->
+<!-- 						<td>Exemples Reffusée</td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<td>Exemples Demande de LivretA</td> -->
+<!-- 						<td>Exemples En attente</td> -->
+<!-- 					</tr> -->
+<!-- 				</table> -->
+<!-- 			</div> -->
+<!-- 			<div class="col-sm-5"> -->
+<!-- 				<table> -->
+<!-- 					<tr> -->
+<!-- 						<th>Patrimoine</th> -->
+<!-- 						<th>Type</th> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<td>PEL</td> -->
+<!-- 						<td>Exemples En attente</td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<td>LivretA</td> -->
+<!-- 						<td>Exemples En attente</td> -->
+<!-- 					</tr> -->
+<!-- 					<tr> -->
+<!-- 						<td>Propriétés privés</td> -->
+<!-- 						<td>Exemples En attente</td> -->
+<!-- 					</tr> -->
+<!-- 				</table> -->
+<!-- 			</div> -->
 		<div class = "row">
 			<div class ="col-sm-5">
 				<p>Nom : @user.lastName</p>

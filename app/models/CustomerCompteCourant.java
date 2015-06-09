@@ -92,8 +92,8 @@ public class CustomerCompteCourant extends Model {
        return find.where().eq("lastName", lastName).findUnique();
     }
 	
-	public static boolean findAlreadyAccount(){
-		return find.where().eq("compteCourantSuscribe",true).findUnique() != null;
+	public static boolean findAlreadyAccount(Long id){
+		return find.where().eq("compteCourantSuscribe",true).eq("userId", id).findUnique() != null;
 	}
 	
 	 
