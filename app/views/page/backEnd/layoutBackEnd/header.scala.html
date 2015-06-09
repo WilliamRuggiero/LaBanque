@@ -29,8 +29,8 @@
     </div> -->
 		<div>
 			<ul class="nav navbar-nav listeMenu">
-				<li class="active"><a href="@routes.BackEnd.accueilAdmin">Index Admin</a></li>
-				<li><a href="#">Gestion des demandes d'offres</a></li>
+				<li class="active"><a href="@routes.BackEnd.accueilAdmin()">Index Admin</a></li>
+				<li><a href="@routes.BackEnd.demandeOffre()">Gestion des demandes d'offres</a></li>
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#">Gestion des clients <span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -61,7 +61,7 @@
 				<li><a href = "@routes.BackEnd.accueilAdmin()"><img class="LogoResponsiveNav" src="@routes.Assets.at("images/logo-banque-du-net.png")"></a>
 					<h4 style="color:white; text-align: center;">Partie administrateur</h4></li>
 				<li class="active"><a href="@routes.BackEnd.accueilAdmin">Index Admin</a></li>
-				<li><a href="#">Gestion des demandes d'offres</a></li>
+				<li><a href="@routes.BackEnd.demandeOffre()">Gestion des demandes d'offres</a></li>
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#">Gestion des clients <span class="caret"></span></a>
 					<ul class="dropdown-menu">

@@ -57,6 +57,11 @@ public class User extends Model {
 		 return find.where().eq("email", email).findRowCount();
 	 }
 	 
-	 
+	 //updater
+	 public void updateUser(String telephone, String passwordHash){
+		 this.telephone = telephone;
+		 this.passwordHash = BCrypt.hashpw(passwordHash,BCrypt.gensalt()); 
+		 this.save();
+	 }
 	 
 }

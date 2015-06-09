@@ -2,6 +2,7 @@ package controllers;
 
 import java.util.ArrayList;
 
+import models.CustomerCompteCourant;
 import models.User;
 import play.mvc.*;
 import play.data.Form;
@@ -59,6 +60,10 @@ public class BackEnd extends Controller {
  	
  	public static Result listClients(){
  		return ok(listClients.render(User.find.orderBy("userId").findList(), User.findByEmail(session().get("email"))));
+ 	}
+ 	
+ 	public static Result demandeOffre(){
+ 		return ok(demandesOffres.render(CustomerCompteCourant.find.orderBy("customerId").findList(), User.findByEmail(session().get("email"))));
  	}
 }
 
