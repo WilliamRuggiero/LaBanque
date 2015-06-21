@@ -3,12 +3,14 @@ package controllers;
 import java.util.ArrayList;
 
 import models.User;
+import formData.rappelMotDePasse.RappelMotdePasse;
 import formData.userRegister.NewUserData;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.page.login.*;
 import views.html.page.inscription.*;
+import play.mvc.*;
 
 public class Inscription extends Controller {
 	
@@ -56,11 +58,21 @@ public class Inscription extends Controller {
 		}
 	}
 
-	public static Result rappelMotDePasse() {
-		return ok(userForget.render());
+	public static Result rappelMotDePasseForm() {
+		RappelMotdePasse formData = new RappelMotdePasse();
+		
+		Form<RappelMotdePasse> form = Form.form(RappelMotdePasse.class).fill(formData);
+		return ok(userForget.render(form));
 	}
 
-
-
-
+	public static Result rappelMotDePasse(){
+		
+		Form<RappelMotdePasse> form = Form.form(RappelMotdePasse.class).bindFromRequest();
+		if(form.hasErrors()){
+			return ok(userForget.render(form));
+		}else{
+			
+			return null;
+		}
+	}
 }

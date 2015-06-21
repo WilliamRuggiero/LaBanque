@@ -1,8 +1,12 @@
-@(users: List[models.CustomerCompteCourant], user: User)
+@(suscribeForm: Form[formData.demandeOffres.DemandeOffre], users: List[models.CustomerCompteCourant], user: User)
 
 @import views.html.page.backEnd._
 @import views.html.page.backEnd.mainBackEnd
 @import views.html.widget._
+@import views.html.formTool._
+@import views.html.main
+@import play.api.mvc.Result
+@import helper.form
 
 @mainBackEnd("Demande d'offres",true){
 
@@ -11,19 +15,21 @@
 			<h2 style="visibility: hidden;">tata</h2>
 		</div>
 	</div>
-	
-	@dataTable("userList", scala.collection.immutable.List("Nom","Date de souscription","Nationalité","Lieu de naissance","Residence fiscale","Situation familiale", "Valider"), "Attention ces données peuvent être confidentielles, si vous ne deviez pas être sur cette page, merci de contacter votre administrateur.") {
-		@for(CustomerCompteCourant<-users){
-			<tr>
-				<td style="text-align: center;">@CustomerCompteCourant.lastName</td>
-				<td style="text-align: center;">@CustomerCompteCourant.suscribeDate</td>
-				<td style="text-align: center;">@CustomerCompteCourant.nationality</td>
-				<td style="text-align: center;">@CustomerCompteCourant.whereIsBorn</td>
-				<td style="text-align: center;">@CustomerCompteCourant.fiscalResidence</td>
-				<td style="text-align: center;">@CustomerCompteCourant.familySituation</td>
-				<td style="text-align: center;">@CustomerCompteCourant.validateByAdmin</td>
-			</tr>
-			
+	@form(controllers.routes.BackEnd.accepteCompteCourant(), 'class -> "form-horizontal") {
+		@dataTable("userList", scala.collection.immutable.List("Nom","Date de souscription","Valider?"), "Attention ces données peuvent être confidentielles, si vous ne deviez pas être sur cette page, merci de contacter votre administrateur.") {
+			@for(CustomerCompteCourant<-users){
+				@if(CustomerCompteCourant.validateByAdmin == false){
+					<tr>
+						<td style="text-align: center;">@CustomerCompteCourant.lastName</td>
+						<td style="text-align: center;">@CustomerCompteCourant.suscribeDate</td>
+						<td style="text-align: center;">
+							@inputBoolean(suscribeForm("validateByAdmin"), label="")
+						</td>
+					</tr>
+				}
+			}
 		}
+		<div class="col-sm-10"></div>
+		<button id="submit" type="submit" value="Submit" class="btn btn-success">Valider</button>
 	}
 }

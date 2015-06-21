@@ -95,7 +95,13 @@ public class CustomerCompteCourant extends Model {
 	public static boolean findAlreadyAccount(Long id){
 		return find.where().eq("compteCourantSuscribe",true).eq("userId", id).findUnique() != null;
 	}
-	
+	public static CustomerCompteCourant findById(Long userId){
+		return find.where().eq("userId", userId).findUnique();
+	}
+	public void updateCompteCourantUser(boolean validateByAdmin){
+		this.validateByAdmin = validateByAdmin;
+		this.save();
+	}
 	 
 	// public static int findRowCount(Customer custom, String bornName){
 	//	 return find.where().eq("bornName", bornName).findRowCount();

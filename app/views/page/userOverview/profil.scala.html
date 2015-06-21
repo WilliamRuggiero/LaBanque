@@ -7,14 +7,21 @@
 			<p></p>
 		</div>
 			<div class="col-sm-2"><img src="@routes.Assets.at("images/avatarHomme.png")" class="img-circle"></div>
-			
+	</div>
 			@dataTable("userList", scala.collection.immutable.List("Historique des actions", "Etats"), "Voici vos historiques"){
-				@for(User<-custom){
-					@if(User.userId == user.userId){
-						<tr>
-							<td style="text-align: center;">@User.userId</td>
-							<td style="text-align: center;">@User.genre</td>
-						</tr>
+				@for(Custom<-custom){
+					@if(Custom.userId == user.userId){
+						@if(Custom.validateByAdmin == false){
+							<tr>
+								<td style="text-align: center;">Demande de compte Courant</td>
+								<td style="text-align: center;">En attente</td>
+							</tr>
+						}else{
+							<tr>
+								<td style="text-align: center;">Demande de compte Courant</td>
+								<td style="text-align: center;">Acceptée</td>
+							</tr>
+						}
 					}
 				}
 			}
@@ -67,4 +74,3 @@
 		</div>
 		
 		<a href="@routes.Profil.formModif()">Modifier vos informations</a>
-	</div>

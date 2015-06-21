@@ -7,7 +7,6 @@ import play.mvc.Security;
 import models.CustomerCompteCourant;
 import models.User;
 import play.mvc.Controller;
-import views.html.page.inscription.userRegistration;
 import views.html.page.userOverview.*;
 
 //POUR QUE SEULS CEUX QUI SONT LOGUES ACCEDENT A CES PAGES

@@ -1,12 +1,14 @@
 package controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import models.CustomerCompteCourant;
 import models.User;
 import play.mvc.*;
 import play.data.Form;
 import play.mvc.Controller;
+import formData.demandeOffres.DemandeOffre;
 import formData.userRegister.NewUserData;
 import views.html.page.backEnd.login.accueil;
 import views.html.page.backEnd.register.*;
@@ -46,8 +48,7 @@ public class BackEnd extends Controller {
     		}
     		else{
 	        	NewUserData data = form.get();
-	        	data.buildUser();
-	        	//return redirect(routes.index());		
+	        	data.buildUser();	
 	        	return ok(registerSucess.render());
     		}
         	
@@ -63,7 +64,26 @@ public class BackEnd extends Controller {
  	}
  	
  	public static Result demandeOffre(){
- 		return ok(demandesOffres.render(CustomerCompteCourant.find.orderBy("customerId").findList(), User.findByEmail(session().get("email"))));
+ 		DemandeOffre formData = new DemandeOffre();
+ 		
+ 		List<CustomerCompteCourant> customer = CustomerCompteCourant.find.orderBy("customerId").findList();
+ 		for(int i = 0;i <customer.size();i++){
+ 			Form<DemandeOffre> form = Form.form(DemandeOffre.class).fill(formData);
+ 		}
+ 		return ok(demandesOffres.render(form, customer, User.findByEmail(session().get("email"))));
+ 	}
+ 	
+ 	public static Result accepteCompteCourant(){
+ 		Form<DemandeOffre> form = Form.form(DemandeOffre.class).bindFromRequest();
+ 		
+ 		List<CustomerCompteCourant> customer = CustomerCompteCourant.find.orderBy("customerId").findList();
+ 		
+ 		for(CustomerCompteCourant c : customer){
+ 			DemandeOffre data = form.get();
+ 			data.applyToCustomer(c);
+ 			return null;
+ 		}
+ 		return null;
  	}
 }
 
