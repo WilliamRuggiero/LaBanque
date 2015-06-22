@@ -1,0 +1,98 @@
+@(user : User, custom : List[models.CustomerCompteCourant],ind : Integer)
+
+@main("Profil utilisateur"){
+
+	@avatar(User.findByEmail(session().get("email")))
+	
+	<div class="row">
+		<p></p>
+	</div>
+	<div class="row">
+		<p></p>
+	</div>
+	<div class="row">
+		<p></p>
+	</div>
+	
+	<div class="row">
+		<div class="col-sm-1"></div>
+		<div class="col-md-11">
+			<h3 style="color : #3a87ad;">
+				Vos historiques d'opérations
+			</h3>
+		</div>
+	</div>
+	
+	<div class="row">
+		<p></p>
+	</div>
+	<div class="row">
+		<p></p>
+	</div>
+	<div class="row">
+		<p></p>
+	</div>
+	
+	@if(ind == 0){
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-md-8">
+				<div class="alert alert-danger" style="text-align: center;">
+					Vous n'avez aucune opération de ce type enregistrée
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+	}else{
+	<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-sm-8">
+				<table class="table">
+					<thead>
+						<tr class="danger">
+							<th style="text-align: center;">
+								Date et Heure
+							</th>
+							<th style="text-align: center;">
+								Historique des actions
+							</th>
+							<th style="text-align: center;">
+								Etats
+							</th>
+						</tr>
+					</thead>
+					@for(Custom<-custom){
+						@if(Custom.userId == user.userId){
+						<tbody>
+							<tr>
+								@if(Custom.validateByAdmin == false){
+									<td style="text-align: center;">
+										@Custom.suscribeDate
+									</td>
+									<td style="text-align: center;">
+										Demande de compte Courant
+									</td>
+									<td style="text-align: center;">
+										En attente
+									</td>
+								}else{
+									<td style="text-align: center;">
+										@Custom.suscribeDate
+									</td>
+									<td style="text-align: center;">
+										Demande de compte Courant
+									</td>
+									<td style="text-align: center;">
+										Acceptée
+									</td>
+								}
+							</tr>
+						</tbody>
+						}
+					}
+				</table>
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+	}
+}

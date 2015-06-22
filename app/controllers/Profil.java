@@ -13,6 +13,18 @@ import views.html.page.userOverview.*;
 
 @Security.Authenticated(SecuriteUser.class)
 public class Profil extends Controller{
+	
+	public static Result historique(){
+		User u = User.findByEmail(session().get("email"));
+		Integer ind = 0;
+		for(int i = 0; i <CustomerCompteCourant.find.orderBy("userId").findList().size(); i++){
+			 if(CustomerCompteCourant.find.orderBy("userId").findList().get(i).userId == u.userId){
+				 ind = ind + 1;
+			 }
+		}
+		
+		return ok(historique.render(u, CustomerCompteCourant.find.orderBy("userId").findList(),ind));
+	}
 	public static Result profilUser(){
 		return ok(userOverview.render(User.findByEmail(session().get("email")), CustomerCompteCourant.find.orderBy("userId").findList()));
 	}

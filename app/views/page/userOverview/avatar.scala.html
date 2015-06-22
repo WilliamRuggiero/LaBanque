@@ -1,0 +1,44 @@
+
+@(user : User)
+ 
+ 
+ @if(user.sex == "Homme"){
+ <div class="row">
+ <div class="col-sm-2"></div>
+<div class="col-sm-2">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
+	<img src="@routes.Assets.at("images/avatarHomme.png")" class="img-circle">
+		<span class="caret"></span>
+	</a>
+	<ul class="dropdown-menu">
+		<li style="text-align: center; color: #3a87ad;"><strong>Vos
+				données personnels</strong></li>
+		<li style="text-align: center;"><a
+			href="@routes.Profil.formModif()">Modifier vos informations</a></li>
+		<br />
+
+		<li style="text-align: center; color: #3a87ad;"><strong>Historiques</strong></li>
+		<li style="text-align: center;"><a
+			href="@routes.Profil.historique()">Vos actions en ligne</a></li>
+	</ul>
+</div>
+}else{
+<div class="col-sm-2">
+	<a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
+	<img src="@routes.Assets.at("images/avatarHomme.png")" class="img-circle">
+		<span class="caret"></span>
+	</a>
+	<ul class="dropdown-menu">
+		<li style="text-align: center; color: #3a87ad;"><strong>Vos
+				données personnels</strong></li>
+		<li style="text-align: center;"><a
+			href="@routes.Profil.formModif()">Modifier vos informations</a></li>
+		<br />
+
+		<li style="text-align: center; color: #3a87ad;"><strong>Historiques</strong></li>
+		<li style="text-align: center;"><a
+			href="@routes.Profil.historique()">Vos actions en ligne</a></li>
+	</ul>
+</div>
+</div>
+}
