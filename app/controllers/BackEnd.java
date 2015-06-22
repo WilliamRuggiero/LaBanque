@@ -67,8 +67,8 @@ public class BackEnd extends Controller {
  		DemandeOffre formData = new DemandeOffre();
  		
  		List<CustomerCompteCourant> customer = CustomerCompteCourant.find.orderBy("customerId").findList();
- 		
- 		return ok(demandesOffres.render(customer, User.findByEmail(session().get("email"))));
+ 			Form<DemandeOffre> form = Form.form(DemandeOffre.class).fill(formData);
+ 		return ok(demandesOffres.render(form, customer, User.findByEmail(session().get("email"))));
  	}
  	
  	public static Result accepteCompteCourant(){
