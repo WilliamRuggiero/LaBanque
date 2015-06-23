@@ -4,8 +4,8 @@
  
  @if(user.sex == "Homme"){
  <div class="row">
- <div class="col-sm-2"></div>
-<div class="col-sm-2">
+ <div class="col-sm-4"></div>
+<div class="col-sm-4">
 	<a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
 	<img src="@routes.Assets.at("images/avatarHomme.png")" class="img-circle">
 		<span class="caret"></span>
@@ -20,8 +20,11 @@
 		<li style="text-align: center; color: #3a87ad;"><strong>Historiques</strong></li>
 		<li style="text-align: center;"><a
 			href="@routes.Profil.historique()">Vos actions en ligne</a></li>
+		<li style="text-align: center;"><a
+			href="@routes.Profil.historique()">Vos historiques de connexion</a></li>
 	</ul>
 </div>
+<div class="col-sm-4"></div>
 }else{
 <div class="col-sm-2">
 	<a class="dropdown-toggle" data-toggle="dropdown" href="#"> 
@@ -38,6 +41,8 @@
 		<li style="text-align: center; color: #3a87ad;"><strong>Historiques</strong></li>
 		<li style="text-align: center;"><a
 			href="@routes.Profil.historique()">Vos actions en ligne</a></li>
+		<li style="text-align: center;"><a
+			href="#">Vos historiques de connexion</a></li>
 	</ul>
 </div>
 </div>
