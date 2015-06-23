@@ -17,11 +17,25 @@ import models.User;
 import views.html.page.souscription.compteCourant.compteCourant1;
 import views.html.page.souscription.compteCourant.compteCourant2;
 import views.html.page.souscription.compteCourant.compteCourant3;
+import views.html.page.souscriptionLivretA.livretA1;
 
 @Security.Authenticated(SecuriteUser.class)
 
 public class Souscription extends Controller{
 
+	public static Result livretA1() {
+		boolean validByAdmin = true;
+		User u = User.findByEmail(session().get("email"));
+		Integer ind = 0;
+		for(int i = 0; i <CustomerCompteCourant.find.orderBy("userId").findList().size(); i++){
+			 if(CustomerCompteCourant.find.orderBy("userId").findList().get(i).userId == u.userId){
+				 ind = ind + 1;
+				 validByAdmin = CustomerCompteCourant.find.orderBy("userId").findList().get(i).validateByAdmin;
+			 }
+		}
+		return ok(livretA1.render(ind , validByAdmin));
+	}
+	
 	public static Result compteCourant1() {
 		return ok(compteCourant1.render());
 	}

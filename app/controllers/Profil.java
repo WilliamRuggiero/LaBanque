@@ -54,7 +54,7 @@ public class Profil extends Controller{
 			}else{
 	    			ModifProfil data = form.get();
 		        	data.applyToUser(u);
-	    			return null;
+	    			return ok(confirmModif.render(u));
 			}
     	}
 	}

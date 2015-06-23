@@ -17,15 +17,15 @@ POST	/newUser					controllers.Inscription.addUser()
 POST	/newCustomer				controllers.Souscription.addCustomer()
 POST	/Profil						controllers.LoginUser.loUser()
 GET 	/Profil						controllers.Profil.profilUser()
-GET		/Profil/Historique					controllers.Profil.historique()
+GET		/Profil/Historique			controllers.Profil.historique()
 GET		/login						controllers.LoginUser.logout()
 GET		/modifProfil1				controllers.Profil.formModif()
 POST	/modifProfil2				controllers.Profil.modifProfil()
 POST	/rappelMotDePasse			controllers.Inscription.rappelMotDePasse()
-
+POST 	/modifConfirm				controllers.Profil.modifProfil()
 GET 	/compteCourant1				controllers.Souscription.compteCourant1()
 GET 	/compteCourant2				controllers.Souscription.compteCourant2()
-
+GET		/livretA1					controllers.Souscription.livretA1()
 
 # BackEnd
 #GET 	/login						controllers.Application.login()

@@ -1,0 +1,89 @@
+
+@(ind : Integer , validByAdmin : Boolean)
+
+@main("Livret A"){
+	@if(ind == 0){
+		<div class="row">
+			<div class="col-sm-2"></div>
+			<div class="col-md-8">
+				<div class="alert alert-danger" style="text-align: center;">
+					Vous devez d'abord être client de la banque et ouvrire un compte courant avant de souscrire à un livret A
+				</div>
+			</div>
+			<div class="col-sm-2"></div>
+		</div>
+	}else{
+		@if(validByAdmin == false){
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-md-8">
+					<div class="alert alert-danger" style="text-align: center;">
+						Vous devez d'abord être client de la banque et ouvrire un compte courant avant de souscrire à un livret A
+					</div>
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+		}else{
+		<div class="col-sm-12" style="height:40px;"></div>
+		<div class="container">
+		<div class="row clearfix">
+			<div class="col-md-12 column">
+			<div class="row clearfix">
+				<div class="col-md-2 column">
+					<h3>
+						En cas de problème :
+					</h3> <address> <strong>Banquedunet.com</strong><br /> 10, rue de Vanves<br /> Issy les Moulineaux, 92100<br /> <abbr title="Phone">P:</abbr> (+33)1422 267 44</address>
+				</div>
+				
+				
+				
+				<div class="col-md-8 column">
+					<h3>
+						Livret A :
+					</h3>
+					<div style="height:15px;"></div>
+					<div class="progress">
+						<div class="progress-bar progress-bar-striped active" role="progressbar" style=" text-align:center; 100em; width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+						Ouvrir un livret A en deux étapes
+						</div>
+					</div>
+					<p>
+						Dans un but de rapidité et de commodité pour la souscription d'un <strong>Livret A</strong>, merci de préparer les pièces justificatives : 
+						
+					</p>
+					
+					Selon votre situation personnelle, voici la liste des pièces nécessaires à l'ouverture d'un compte de dépôt :
+					<ul><li>Pièce d'identité <small>(1)</small> en cours de validité</li>
+					<li>Justificatif de domicile <small>(2)</small> de moins de 3 mois</li>
+					<li>Justificatif de revenus : Dernier bulletin de salaire – justificatifs versement pension/retraite, versement prestations sociales (CAF, ASSEDIC) - Attestation de non revenus – Avis d'imposition ou de non imposition - Carte d'étudiant pour les étudiants</li>
+					<li>3 derniers relevés de(s) compte(s) bancaire(s) externes</li></ul>
+					
+					
+					Pour les personnes hébergées à titre gratuit
+					<ul><li>Attestation manuscrite de l'hébergeur</li>
+					<li>Justificatif de domicile</li>
+					<li>Justificatif d'identité de l'hébergeur</li></ul>
+					
+					
+					Pour les personnes mineures
+					<ul><li>Le livret de famille</li></ul>
+					
+					
+					Pour les personnes en incapacité juridique ou mineur émancipé
+					<ul><li>Ordonnance du juge des tutelles</li>
+					<li>Copie du jugement du tribunal</li></ul>
+					<div style="height:65px;"></div>
+					<small>(1) Pour les justificatifs d'identité en cours de validité : la carte nationale d'identité, le passeport ou un titre de séjour.<br>
+(2) Pour les justificatifs de domicile : une quittance Energie, Eau, une facture de téléphone fixe, une facture de téléphone mobile d'un opérateur notoirement connu, une quittance de loyer HLM, le dernier avis d'imposition ou de non imposition, attestation assurance résidence principale</small>
+					
+				</div>
+				<div style="height:65px;"></div>
+				<div class="col-md-2 column">
+					 <button type="button" onclick="self.location.href='#'" class="btn btn-info"><span class="glyphicon glyphicon-chevron-right"></span>  Prochaine étape</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>}
+	}
+}
